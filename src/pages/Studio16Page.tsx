@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { Mic, Monitor, Users, Camera, Briefcase, Wifi, Layout, Zap, Headphones, Clock, Calendar as CalendarIcon, HardDrive, Video } from 'lucide-react';
+import { Mic, Monitor, Users, Camera, Briefcase, Wifi, Layout, Zap, Headphones, Clock, Calendar as CalendarIcon, Video } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import CustomCursor from '../components/CustomCursor';
