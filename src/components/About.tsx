@@ -17,13 +17,13 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="max-w-4xl mx-auto text-center"
         >
           <div className="space-y-8">
             <h2 className="text-4xl font-display font-bold tracking-wider uppercase text-white drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">
               Vision & Mission
             </h2>
-            <div className="h-0.5 w-24 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink shadow-[0_0_10px_rgba(255,255,255,0.5)]" />
+            <div className="h-0.5 w-24 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink shadow-[0_0_10px_rgba(255,255,255,0.5)] mx-auto" />
             <p className="text-lg text-gray-400 leading-relaxed font-light">
               In Gaia Circle Lab crediamo che <span className="text-white font-medium drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">"la perfezione viva solo nell'imperfezione"</span>. 
               La nostra missione non è la produzione in serie, ma la creazione di esperienze digitali, visive e fisiche che lasciano il segno.
@@ -32,21 +32,6 @@ const About: React.FC = () => {
               La tecnologia oggi riproduce, ma non prova emozioni; noi ascoltiamo, sbagliamo, correggiamo e trasformiamo un'idea in un'emozione autentica. 
               Vogliamo colmare l'abisso tra la semplice creazione tecnica e il dare un senso profondo alla comunicazione.
             </p>
-          </div>
-          
-          <div className="relative h-96 w-full rounded-2xl overflow-hidden glass group border-neon-blue/20 hover:border-neon-blue/40 transition-colors duration-500">
-             {/* Placeholder for an image or graphic representing the abyss/technology */}
-             <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-gray-800 to-black opacity-80 group-hover:scale-105 transition-transform duration-700" />
-             <div className="absolute inset-0 flex items-center justify-center">
-               <span className="font-display text-2xl uppercase tracking-widest text-white/20 group-hover:text-neon-blue group-hover:drop-shadow-[0_0_10px_rgba(0,243,255,0.5)] transition-all duration-500">
-                 [L'Arte dell'Errore]
-               </span>
-             </div>
-             <div className="absolute inset-0 border border-white/5 group-hover:border-white/20 transition-colors duration-500 rounded-2xl" />
-             
-             {/* Decorative Elements */}
-             <div className="absolute top-4 right-4 w-2 h-2 bg-neon-pink rounded-full animate-pulse-slow" />
-             <div className="absolute bottom-4 left-4 w-2 h-2 bg-neon-blue rounded-full animate-pulse-slow delay-700" />
           </div>
         </motion.div>
 

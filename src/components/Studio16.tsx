@@ -64,7 +64,7 @@ const Studio16: React.FC = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-display font-bold tracking-wider uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink drop-shadow-lg">
+          <h2 className="text-3xl md:text-5xl font-display font-bold tracking-wider uppercase mb-4 text-transparent bg-clip-text bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink drop-shadow-lg">
             Studio 16
           </h2>
           <p className="text-xl md:text-2xl text-gray-300 font-light max-w-3xl mx-auto mb-8">
@@ -89,7 +89,7 @@ const Studio16: React.FC = () => {
             "Punto di riferimento creativo locale",
             "Crescita artistica e professionale"
           ].map((goal, i) => (
-            <div key={i} className="p-6 rounded-xl bg-white/5 border border-white/5 hover:border-neon-blue/30 transition-colors text-center">
+            <div key={i} className="p-5 md:p-6 rounded-xl bg-white/5 border border-white/5 hover:border-neon-blue/30 transition-colors text-center">
               <div className="w-10 h-10 mx-auto mb-4 rounded-full bg-neon-blue/10 flex items-center justify-center text-neon-blue font-bold">
                 {i + 1}
               </div>
@@ -107,7 +107,7 @@ const Studio16: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`group relative p-8 rounded-2xl bg-zinc-900/50 border ${service.color} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1`}
+              className={`group relative p-6 md:p-8 rounded-2xl bg-zinc-900/50 border ${service.color} backdrop-blur-sm transition-all duration-300 hover:-translate-y-1`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${service.glow} to-transparent opacity-0 group-hover:opacity-10 rounded-2xl transition-opacity duration-500`} />
               

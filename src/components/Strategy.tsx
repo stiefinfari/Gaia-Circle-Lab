@@ -11,7 +11,7 @@ const Strategy: React.FC = () => {
       <div className="absolute top-20 left-10 w-32 h-32 border border-neon-pink/20 rotate-45 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto glass p-10 md:p-16 rounded-3xl border border-white/10 shadow-neon-blue relative overflow-hidden">
+        <div className="max-w-4xl mx-auto glass p-6 md:p-16 rounded-3xl border border-white/10 shadow-neon-blue relative overflow-hidden">
           
           <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-neon-purple/20 to-transparent pointer-events-none" />
 

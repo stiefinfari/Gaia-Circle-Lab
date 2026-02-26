@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Music, Mic2, Video } from 'lucide-react';
+import { Music, Mic2, Video, ArrowRight } from 'lucide-react';
 
 const Studio16Teaser: React.FC = () => {
   return (
@@ -31,18 +31,18 @@ const Studio16Teaser: React.FC = () => {
             </h2>
             
             <p className="text-xl text-gray-300 font-light mb-8 leading-relaxed">
-              Il nuovo hub creativo a Moruzzo (UD). Uno spazio professionale dedicato alla musica, 
-              alla registrazione e alle dirette streaming.
+              Il tuo hub creativo a Moruzzo. <span className="text-neon-blue font-medium">Plug & Play</span>, <span className="text-neon-purple font-medium">ready to use</span>, <span className="text-neon-pink font-medium">massima resa</span>.
+              Spazio ibrido per A/V, creatività digitale e lavoro in remoto.
             </p>
 
-            <div className="flex gap-4 mb-10 text-gray-400">
+            <div className="flex gap-4 mb-10 text-gray-400 flex-wrap">
               <div className="flex items-center gap-2">
                 <Music size={18} className="text-neon-blue" />
                 <span className="text-sm uppercase tracking-wide">DJ Set</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mic2 size={18} className="text-neon-pink" />
-                <span className="text-sm uppercase tracking-wide">Recording</span>
+                <span className="text-sm uppercase tracking-wide">Podcast</span>
               </div>
               <div className="flex items-center gap-2">
                 <Video size={18} className="text-neon-purple" />
@@ -67,26 +67,37 @@ const Studio16Teaser: React.FC = () => {
             viewport={{ once: true }}
             className="md:w-1/2 relative"
           >
-            <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 relative group">
-              {/* Placeholder Gradient representing the studio vibe */}
-              <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-zinc-900 to-black" />
+            <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 relative group bg-black/50 backdrop-blur-sm">
+              {/* Background with noise and gradient */}
+              <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black opacity-90" />
+              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay" />
               
-              {/* Animated Glow Lines */}
-              <div className="absolute inset-0 opacity-30">
-                <div className="absolute top-0 left-1/4 w-px h-full bg-gradient-to-b from-transparent via-neon-blue to-transparent animate-pulse-slow" />
-                <div className="absolute top-0 left-2/4 w-px h-full bg-gradient-to-b from-transparent via-neon-purple to-transparent animate-pulse-slow delay-700" />
-                <div className="absolute top-0 left-3/4 w-px h-full bg-gradient-to-b from-transparent via-neon-pink to-transparent animate-pulse-slow delay-1000" />
+              {/* Animated Equalizer Bars */}
+              <div className="absolute inset-0 flex items-center justify-center gap-1 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
+                {[...Array(12)].map((_, i) => (
+                  <motion.div
+                    key={i}
+                    animate={{ height: ["20%", "60%", "30%", "80%", "40%"] }}
+                    transition={{ 
+                      duration: 0.8 + Math.random() * 0.5, 
+                      repeat: Infinity, 
+                      ease: "easeInOut",
+                      delay: i * 0.1 
+                    }}
+                    className="w-2 md:w-4 bg-gradient-to-t from-neon-blue via-neon-purple to-neon-pink rounded-full"
+                  />
+                ))}
               </div>
 
-              {/* Center Text */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <h3 className="text-6xl font-display font-bold text-white/5 uppercase tracking-tighter group-hover:text-white/10 transition-colors duration-500">
-                  Studio 16
+              {/* Center Icon/Text */}
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
+                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 flex items-center justify-center mb-4 group-hover:border-neon-purple/50 group-hover:bg-neon-purple/10 transition-all duration-500">
+                  <Music className="w-8 h-8 md:w-10 md:h-10 text-white group-hover:text-neon-purple transition-colors duration-300" />
+                </div>
+                <h3 className="text-xl md:text-2xl font-display font-bold text-white uppercase tracking-wider group-hover:text-neon-blue transition-colors duration-300">
+                  Entra nel Lab
                 </h3>
               </div>
-              
-              {/* Overlay on Hover */}
-              <div className="absolute inset-0 bg-neon-purple/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             </div>
             
             {/* Decorative box behind */}

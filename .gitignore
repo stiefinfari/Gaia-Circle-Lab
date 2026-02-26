@@ -11,14 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
-
-# Editor directories and files
-.vscode/*
-!.vscode/extensions.json
-.idea
 .DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+
+# Large video files
+public/assets/video-1772140344868.ts
+public/assets/video-showreel-encoded.mp4
+public/assets/video-showreel.mp4
+asset/mpegts-h264-1920_1080.mts

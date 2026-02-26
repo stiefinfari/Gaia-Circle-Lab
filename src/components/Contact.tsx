@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
         <div className="flex flex-col md:flex-row items-center justify-center gap-6">
           <a 
             href="mailto:info@gaiacirclelab.com" 
-            className="group inline-flex items-center gap-3 bg-white text-black px-10 py-5 rounded-full font-display font-bold uppercase tracking-wide hover:bg-white/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all duration-300 transform hover:-translate-y-1"
+            className="group w-full md:w-auto justify-center inline-flex items-center gap-3 bg-white text-black px-6 md:px-10 py-5 rounded-full font-display font-bold uppercase tracking-wide hover:bg-white/90 hover:shadow-[0_0_20px_rgba(255,255,255,0.5)] transition-all duration-300 transform hover:-translate-y-1"
           >
             <Mail size={20} />
             Invia Email
@@ -28,7 +28,7 @@ const Contact: React.FC = () => {
             href="https://wa.me/393409490109" 
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-3 bg-transparent border border-white/20 text-white px-10 py-5 rounded-full font-display font-bold uppercase tracking-wide hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300 transform hover:-translate-y-1"
+            className="group w-full md:w-auto justify-center inline-flex items-center gap-3 bg-transparent border border-white/20 text-white px-6 md:px-10 py-5 rounded-full font-display font-bold uppercase tracking-wide hover:bg-white/10 hover:border-white/40 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all duration-300 transform hover:-translate-y-1"
           >
             <Phone size={20} />
             WhatsApp

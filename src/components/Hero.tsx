@@ -17,8 +17,22 @@ const Hero: React.FC = () => {
       id="home" 
       className="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-black"
     >
-      {/* Simple Dynamic Background */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900/30 via-black to-black z-0" />
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-60 pointer-events-none"
+        >
+          <source src="/assets/video-showreel-trimmed.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      {/* Simple Dynamic Background Overlay */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-black/40 to-black z-0" />
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 z-0 mix-blend-overlay" />
       
       {/* Minimal Geometric Shapes (Slow Float) */}
@@ -31,7 +45,7 @@ const Hero: React.FC = () => {
           rotate: { duration: 30, repeat: Infinity, ease: "linear" },
           scale: { duration: 8, repeat: Infinity, ease: "easeInOut" }
         }}
-        className="absolute top-20 left-10 md:left-20 w-64 h-64 border border-neon-blue/10 rounded-full blur-[1px] z-0 pointer-events-none"
+        className="absolute top-10 md:top-20 left-4 md:left-20 w-48 h-48 md:w-64 md:h-64 border border-neon-blue/10 rounded-full blur-[1px] z-0 pointer-events-none"
       />
       
       <motion.div 
@@ -43,7 +57,7 @@ const Hero: React.FC = () => {
           rotate: { duration: 40, repeat: Infinity, ease: "linear" },
           scale: { duration: 10, repeat: Infinity, ease: "easeInOut" }
         }}
-        className="absolute bottom-20 right-10 md:right-20 w-80 h-80 border border-neon-purple/10 rounded-full blur-[1px] z-0 pointer-events-none dashed-border"
+        className="absolute bottom-10 md:bottom-20 right-4 md:right-20 w-64 h-64 md:w-80 md:h-80 border border-neon-purple/10 rounded-full blur-[1px] z-0 pointer-events-none dashed-border"
       />
       
       {/* Floating Elements (Simple 2D Float) */}
@@ -77,7 +91,7 @@ const Hero: React.FC = () => {
           <img 
             src="/assets/logo-text.png" 
             alt="Gaia Circle Lab Text" 
-            className="w-64 md:w-96 lg:w-[32rem] h-auto opacity-100 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] mb-10"
+            className="w-56 md:w-96 lg:w-[32rem] h-auto opacity-100 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] mb-6 md:mb-10"
           />
 
           {/* Clean Subtitle */}
@@ -85,7 +99,7 @@ const Hero: React.FC = () => {
              initial={{ opacity: 0, y: 10 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.5 }}
-             className="flex flex-wrap justify-center gap-4 md:gap-8 text-xs md:text-sm font-display tracking-[0.2em] uppercase text-gray-400"
+             className="flex flex-wrap justify-center gap-3 md:gap-8 text-[10px] md:text-sm font-display tracking-[0.2em] uppercase text-gray-400"
           >
             <span className="hover:text-neon-blue transition-colors duration-300">Web Design</span>
             <span className="text-white/20">•</span>
