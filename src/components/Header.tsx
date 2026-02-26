@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,21 +26,7 @@ const Header: React.FC = () => {
     { name: 'Contatti', href: '/#contact' },
   ];
 
-  const handleNavClick = (href: string) => {
-    setIsOpen(false);
-    if (href.startsWith('/#')) {
-      const elementId = href.replace('/#', '');
-      if (location.pathname === '/') {
-        // If already on home, scroll to element
-        const element = document.getElementById(elementId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
-      }
-      // If not on home, Link will handle navigation, but we need to wait for page load to scroll
-      // This is a simplified approach; robust solution would use a hash link handler
-    }
-  };
+
 
   return (
     <header 

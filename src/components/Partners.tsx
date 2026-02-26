@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 const Partners: React.FC = () => {
   // Placeholder for partners. 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mic2, Music, Video, Users, Calendar, Radio } from 'lucide-react';
+import { Music, Video, Users, Calendar, Radio } from 'lucide-react';
 
 const Studio16: React.FC = () => {
   const services = [
