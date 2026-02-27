@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -15,14 +17,42 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    setIsOpen(false);
+    
+    if (href.startsWith('#')) {
+      // If we are on the home page, just scroll
+      if (location.pathname === '/' || location.pathname === '') {
+        const element = document.querySelector(href);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      } else {
+        // If we are on another page, navigate to home then scroll
+        navigate('/');
+        // Wait for navigation then scroll
+        setTimeout(() => {
+          const element = document.querySelector(href);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      }
+    } else {
+      // Normal navigation
+      navigate(href);
+    }
+  };
+
   const navLinks = [
     { name: 'Home', href: '/' },
-    { name: 'Filosofia', href: '/#philosophy' },
-    { name: 'Servizi', href: '/#services' },
-    { name: 'Strategia', href: '/#strategy' },
-    { name: 'Progetti', href: '/#projects' },
+    { name: 'Filosofia', href: '#philosophy' },
+    { name: 'Servizi', href: '#services' },
+    { name: 'Strategia', href: '#strategy' },
+    { name: 'Progetti', href: '#projects' },
     { name: 'Studio 16', href: '/studio16' },
-    { name: 'Contatti', href: '/#contact' },
+    { name: 'Contatti', href: '#contact' },
   ];
 
   return (
@@ -47,9 +77,9 @@ const Header: React.FC = () => {
         }}
         transition={{ duration: 0.4, ease: "easeInOut" }}
       >
-        <Link to="/" className="flex items-center gap-3 group">
+        <Link to="/" onClick={(e) => handleNavClick(e as any, '/')} className="flex items-center gap-3 group">
           <img 
-            src="/assets/logo-solo.png" 
+            src={`${import.meta.env.BASE_URL}assets/logo-solo.png`}
             alt="Gaia Circle Lab Logo" 
             className="h-8 w-auto group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.8)] transition-all duration-300" 
           />
@@ -61,28 +91,20 @@ const Header: React.FC = () => {
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-1">
           {navLinks.map((link) => (
-             link.href.startsWith('/#') ? (
-              <a 
-                key={link.name} 
-                href={link.href}
-                className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/5 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300"
-              >
-                {link.name}
-              </a>
-             ) : (
-              <Link 
-                key={link.name} 
-                to={link.href} 
-                className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/5 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300"
-              >
-                {link.name}
-              </Link>
-             )
+             <a 
+               key={link.name} 
+               href={link.href}
+               onClick={(e) => handleNavClick(e, link.href)}
+               className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/5 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300 cursor-pointer"
+             >
+               {link.name}
+             </a>
           ))}
           <div className="w-px h-4 bg-white/10 mx-2" />
           <a 
-            href="/#contact"
-            className="flex items-center gap-2 bg-white text-black px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-gray-200 hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105 active:scale-95"
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
+            className="flex items-center gap-2 bg-white text-black px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-gray-200 hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105 active:scale-95 cursor-pointer"
             title="Richiedi un preventivo"
           >
             <MessageSquare size={14} />
@@ -93,7 +115,8 @@ const Header: React.FC = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-4">
           <a 
-            href="/#contact"
+            href="#contact"
+            onClick={(e) => handleNavClick(e, '#contact')}
             className="text-white focus:outline-none"
             title="Richiedi un preventivo"
           >
@@ -120,25 +143,14 @@ const Header: React.FC = () => {
           >
             <nav className="flex flex-col p-4 space-y-2">
               {navLinks.map((link) => (
-                link.href.startsWith('/#') ? (
-                  <a 
-                    key={link.name} 
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 transition-all text-center"
-                  >
-                    {link.name}
-                  </a>
-                ) : (
-                  <Link 
-                    key={link.name} 
-                    to={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 transition-all text-center"
-                  >
-                    {link.name}
-                  </Link>
-                )
+                <a 
+                  key={link.name} 
+                  href={link.href}
+                  onClick={(e) => handleNavClick(e, link.href)}
+                  className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 transition-all text-center cursor-pointer"
+                >
+                  {link.name}
+                </a>
               ))}
             </nav>
           </motion.div>

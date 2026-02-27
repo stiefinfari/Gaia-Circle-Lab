@@ -5,15 +5,15 @@ const Partners: React.FC = () => {
   // In a real scenario, we would use the actual file names provided by the user 
   // or ask them to place them in the public folder.
   const partners = [
-    { name: 'Dj Maxwell', logo: '/assets/partners/Dj Maxwell 2.png' },
-    { name: 'LUAU', logo: '/assets/partners/LUAU+ESSO.webp' },
-    { name: 'Limonando', logo: '/assets/partners/Limonando W.png' },
-    { name: 'TMH', logo: '/assets/partners/TMH_LOGO_WHITE.png' },
-    { name: 'Cine Disco', logo: '/assets/partners/cine+disco+logo.webp' },
-    { name: 'Sound & Light', logo: '/assets/partners/soun&light-bianco.png' },
-    { name: 'Phari', logo: '/assets/partners/LOGO PHARI NEW.png' },
-    { name: 'Lysa Chain', logo: '/assets/partners/lysachain_white1080.png' },
-    { name: 'WC + Riscaldamento', logo: '/assets/partners/wc+riscaldamento.webp' },
+    { name: 'Dj Maxwell', logo: `${import.meta.env.BASE_URL}assets/partners/dj-maxwell.png` },
+    { name: 'LUAU', logo: `${import.meta.env.BASE_URL}assets/partners/luau-esso.webp` },
+    { name: 'Limonando', logo: `${import.meta.env.BASE_URL}assets/partners/limonando.png` },
+    { name: 'TMH', logo: `${import.meta.env.BASE_URL}assets/partners/tmh.png` },
+    { name: 'Cine Disco', logo: `${import.meta.env.BASE_URL}assets/partners/cine-disco.webp` },
+    { name: 'Sound & Light', logo: `${import.meta.env.BASE_URL}assets/partners/sound-light.png` },
+    { name: 'Phari', logo: `${import.meta.env.BASE_URL}assets/partners/phari.png` },
+    { name: 'Lysa Chain', logo: `${import.meta.env.BASE_URL}assets/partners/lysachain.png` },
+    { name: 'WC + Riscaldamento', logo: `${import.meta.env.BASE_URL}assets/partners/wc-riscaldamento.webp` },
   ];
 
   return (

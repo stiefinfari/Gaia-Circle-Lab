@@ -75,7 +75,7 @@ const Studio16Teaser: React.FC = () => {
               {/* Center Icon/Text */}
               <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-8">
                 <img 
-                  src="/assets/studio16.svg" 
+                  src={`${import.meta.env.BASE_URL}assets/studio16.svg`}
                   alt="Studio 16" 
                   className="w-full max-w-[280px] md:max-w-[360px] h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-105 transition-transform duration-500"
                 />

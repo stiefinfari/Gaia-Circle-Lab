@@ -26,7 +26,7 @@ const Hero: React.FC = () => {
           playsInline
           className="absolute top-0 left-0 w-full h-full object-cover opacity-60 pointer-events-none"
         >
-          <source src="/assets/video-showreel-trimmed.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}assets/video-showreel-trimmed.mp4`} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
           <div className="absolute -inset-20 bg-gradient-to-tr from-neon-blue/10 via-neon-purple/10 to-neon-pink/10 blur-[100px] rounded-full opacity-40 animate-pulse-slow" />
           
           <img 
-            src="/assets/logo-text.png" 
+            src={`${import.meta.env.BASE_URL}assets/logo-text.png`}
             alt="Gaia Circle Lab Text" 
             className="w-56 md:w-96 lg:w-[32rem] h-auto opacity-100 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] mb-6 md:mb-10"
           />
