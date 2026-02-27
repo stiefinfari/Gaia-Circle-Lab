@@ -72,31 +72,13 @@ const Studio16Teaser: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black opacity-90" />
               <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay" />
               
-              {/* Animated Equalizer Bars */}
-              <div className="absolute inset-0 flex items-center justify-center gap-1 opacity-20 group-hover:opacity-40 transition-opacity duration-500">
-                {[...Array(12)].map((_, i) => (
-                  <motion.div
-                    key={i}
-                    animate={{ height: ["20%", "60%", "30%", "80%", "40%"] }}
-                    transition={{ 
-                      duration: 0.8 + Math.random() * 0.5, 
-                      repeat: Infinity, 
-                      ease: "easeInOut",
-                      delay: i * 0.1 
-                    }}
-                    className="w-2 md:w-4 bg-gradient-to-t from-neon-blue via-neon-purple to-neon-pink rounded-full"
-                  />
-                ))}
-              </div>
-
               {/* Center Icon/Text */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center z-10">
-                <div className="w-16 h-16 md:w-20 md:h-20 rounded-full border border-white/20 flex items-center justify-center mb-4 group-hover:border-neon-purple/50 group-hover:bg-neon-purple/10 transition-all duration-500">
-                  <Music className="w-8 h-8 md:w-10 md:h-10 text-white group-hover:text-neon-purple transition-colors duration-300" />
-                </div>
-                <h3 className="text-xl md:text-2xl font-display font-bold text-white uppercase tracking-wider group-hover:text-neon-blue transition-colors duration-300">
-                  Entra nel Lab
-                </h3>
+              <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-8">
+                <img 
+                  src="/assets/studio16.svg" 
+                  alt="Studio 16" 
+                  className="w-full max-w-[280px] md:max-w-[360px] h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-105 transition-transform duration-500"
+                />
               </div>
             </div>
             

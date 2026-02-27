@@ -1,73 +1,59 @@
 import React, { useEffect, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, useMotionValue } from 'framer-motion';
 
 const CustomCursor: React.FC = () => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const cursorX = useMotionValue(-100);
+  const cursorY = useMotionValue(-100);
+
   const [isHovering, setIsHovering] = useState(false);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+    const moveCursor = (e: MouseEvent) => {
+      cursorX.set(e.clientX - 10);
+      cursorY.set(e.clientY - 10);
     };
 
     const handleMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (
+      // Check if the target or its parent is interactive
+      const isInteractive = 
         target.tagName === 'A' || 
         target.tagName === 'BUTTON' ||
         target.closest('a') ||
         target.closest('button') ||
-        target.classList.contains('cursor-pointer')
-      ) {
-        setIsHovering(true);
-      } else {
-        setIsHovering(false);
-      }
+        target.classList.contains('cursor-pointer') ||
+        window.getComputedStyle(target).cursor === 'pointer';
+
+      setIsHovering(!!isInteractive);
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mousemove', moveCursor);
     window.addEventListener('mouseover', handleMouseOver);
 
     return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
+      window.removeEventListener('mousemove', moveCursor);
       window.removeEventListener('mouseover', handleMouseOver);
     };
-  }, []);
+  }, [cursorX, cursorY]);
 
   return (
-    <>
-      {/* Main Cursor Dot */}
-      <motion.div
-        className="fixed top-0 left-0 w-4 h-4 bg-white rounded-full pointer-events-none z-[9999] mix-blend-difference"
-        animate={{
-          x: mousePosition.x - 8,
-          y: mousePosition.y - 8,
-          scale: isHovering ? 2.5 : 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 500,
-          damping: 28,
-          mass: 0.5
-        }}
-      />
-      
-      {/* Trailing Glow */}
-      <motion.div
-        className="fixed top-0 left-0 w-8 h-8 rounded-full pointer-events-none z-[9998] opacity-50 blur-sm border border-neon-blue"
-        animate={{
-          x: mousePosition.x - 16,
-          y: mousePosition.y - 16,
-          scale: isHovering ? 1.5 : 1,
-        }}
-        transition={{
-          type: "spring",
-          stiffness: 250,
-          damping: 20,
-          mass: 0.8
-        }}
-      />
-    </>
+    <motion.div
+      className="hidden md:block fixed top-0 left-0 rounded-full pointer-events-none z-[99999]"
+      style={{
+        width: 20,
+        height: 20,
+        backgroundColor: '#FFFFFF',
+        mixBlendMode: 'difference',
+        x: cursorX,
+        y: cursorY,
+      }}
+      animate={{
+        scale: isHovering ? 2.5 : 1,
+      }}
+      transition={{
+        scale: { type: "tween", ease: "backOut", duration: 0.2 }
+      }}
+    />
   );
 };
 

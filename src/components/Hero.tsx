@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
           rotate: { duration: 30, repeat: Infinity, ease: "linear" },
           scale: { duration: 8, repeat: Infinity, ease: "easeInOut" }
         }}
-        className="absolute top-10 md:top-20 left-4 md:left-20 w-48 h-48 md:w-64 md:h-64 border border-neon-blue/10 rounded-full blur-[1px] z-0 pointer-events-none"
+        className="absolute top-10 md:top-20 left-4 md:left-20 w-32 h-32 md:w-64 md:h-64 border border-neon-blue/10 rounded-full blur-[1px] z-0 pointer-events-none"
       />
       
       <motion.div 
@@ -57,7 +57,7 @@ const Hero: React.FC = () => {
           rotate: { duration: 40, repeat: Infinity, ease: "linear" },
           scale: { duration: 10, repeat: Infinity, ease: "easeInOut" }
         }}
-        className="absolute bottom-10 md:bottom-20 right-4 md:right-20 w-64 h-64 md:w-80 md:h-80 border border-neon-purple/10 rounded-full blur-[1px] z-0 pointer-events-none dashed-border"
+        className="absolute bottom-10 md:bottom-20 right-4 md:right-20 w-40 h-40 md:w-80 md:h-80 border border-neon-purple/10 rounded-full blur-[1px] z-0 pointer-events-none dashed-border"
       />
       
       {/* Floating Elements (Simple 2D Float) */}

@@ -3,7 +3,6 @@ import { motion, useScroll, useSpring } from 'framer-motion';
 import { Mic, Monitor, Users, Camera, Briefcase, Wifi, Layout, Zap, Headphones, Clock, Calendar as CalendarIcon, Video } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import CustomCursor from '../components/CustomCursor';
 import Contact from '../components/Contact';
 
 const Studio16Page: React.FC = () => {
@@ -42,7 +41,7 @@ const Studio16Page: React.FC = () => {
     },
     {
       title: 'Riunioni High-End',
-      description: 'Coworking temporaneo per call critiche dove la qualità A/V (cam 4K, mic broadcast, no lag) fa la differenza.',
+      description: 'Coworking temporaneo per call critiche dove la qualità A/V fa la differenza.',
       icon: <Briefcase className="w-6 h-6 text-neon-purple" />
     }
   ];
@@ -96,7 +95,6 @@ const Studio16Page: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-white/30 selection:text-white cursor-none">
-      <CustomCursor />
       
       {/* Scroll Progress Bar */}
       <motion.div
@@ -186,6 +184,37 @@ const Studio16Page: React.FC = () => {
                   </motion.div>
                 ))}
               </div>
+            </div>
+
+            {/* Video Showcase Section */}
+            <div className="mb-24">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="text-center mb-12"
+              >
+                <h3 className="text-3xl font-display font-bold uppercase mb-4">Showcase</h3>
+                <p className="text-gray-400 font-light">Un esempio di produzione realizzata nel nostro studio.</p>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8 }}
+                viewport={{ once: true }}
+                className="relative w-full max-w-5xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_30px_rgba(138,43,226,0.2)]"
+              >
+                <iframe 
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/kWyDbb4j4Jc" 
+                  title="Studio 16 Session Example" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                  referrerPolicy="strict-origin-when-cross-origin" 
+                  allowFullScreen
+                ></iframe>
+              </motion.div>
             </div>
 
             {/* Pricing Section */}

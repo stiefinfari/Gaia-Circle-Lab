@@ -97,7 +97,7 @@ const Projects: React.FC = () => {
               </div>
               
               <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-end p-6 md:p-8`}>
-                <h3 className="text-2xl md:text-3xl font-display font-bold uppercase translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-100 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">{project.title}</h3>
+                <h3 className="text-xl md:text-3xl font-display font-bold uppercase translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-100 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">{project.title}</h3>
                 <p className="text-xs md:text-sm text-gray-300 uppercase tracking-widest translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-200">{project.category}</p>
               </div>
               

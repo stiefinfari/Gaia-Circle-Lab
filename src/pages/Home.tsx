@@ -10,7 +10,6 @@ import Projects from '../components/Projects';
 import Studio16Teaser from '../components/Studio16Teaser';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
-import CustomCursor from '../components/CustomCursor';
 
 const Home: React.FC = () => {
   const { scrollYProgress } = useScroll();
@@ -22,8 +21,6 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-white/30 selection:text-white cursor-none">
-      <CustomCursor />
-      
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink origin-left z-[100]"

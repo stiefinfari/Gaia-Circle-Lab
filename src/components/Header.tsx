@@ -7,10 +7,9 @@ const Header: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+      setScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -26,17 +25,28 @@ const Header: React.FC = () => {
     { name: 'Contatti', href: '/#contact' },
   ];
 
-
-
   return (
-    <header 
-      className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 print:hidden ${
-        scrolled 
-          ? 'top-4 w-[90%] max-w-5xl bg-black/60 backdrop-blur-xl border border-white/10 shadow-[0_8px_32px_rgba(0,0,0,0.5)] rounded-full py-2 px-6' 
-          : 'top-6 w-[95%] max-w-6xl bg-transparent border border-transparent py-4 px-6'
-      }`}
-    >
-      <div className={`flex justify-between items-center transition-all duration-500 ${!scrolled && 'bg-black/40 backdrop-blur-md border border-white/5 rounded-full px-8 py-3'}`}>
+    <>
+      <motion.header 
+        className="fixed left-1/2 z-50 flex items-center justify-between"
+        initial={{ y: -100, opacity: 0, x: "-50%" }}
+        animate={{ 
+          y: 0, 
+          opacity: 1,
+          x: "-50%",
+          top: scrolled ? "1rem" : "2rem",
+          width: scrolled ? "90%" : "95%",
+          maxWidth: "80rem",
+          height: scrolled ? "3.5rem" : "4.5rem",
+          backgroundColor: scrolled ? "rgba(10, 10, 10, 0.7)" : "rgba(255, 255, 255, 0.03)",
+          backdropFilter: "blur(12px)",
+          borderRadius: "9999px",
+          padding: "0 1.5rem",
+          border: "1px solid rgba(255, 255, 255, 0.08)",
+          boxShadow: scrolled ? "0 4px 30px rgba(0, 0, 0, 0.5)" : "none"
+        }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+      >
         <Link to="/" className="flex items-center gap-3 group">
           <img 
             src="/assets/logo-solo.png" 
@@ -55,7 +65,7 @@ const Header: React.FC = () => {
               <a 
                 key={link.name} 
                 href={link.href}
-                className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300"
+                className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/5 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300"
               >
                 {link.name}
               </a>
@@ -63,16 +73,16 @@ const Header: React.FC = () => {
               <Link 
                 key={link.name} 
                 to={link.href} 
-                className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300"
+                className="px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/5 hover:shadow-[0_0_15px_rgba(255,255,255,0.1)] transition-all duration-300"
               >
                 {link.name}
               </Link>
              )
           ))}
-          <div className="w-px h-6 bg-white/10 mx-2" />
+          <div className="w-px h-4 bg-white/10 mx-2" />
           <a 
             href="/#contact"
-            className="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-gray-200 hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105 active:scale-95"
+            className="flex items-center gap-2 bg-white text-black px-4 py-1.5 rounded-full text-xs uppercase tracking-widest font-bold hover:bg-gray-200 hover:shadow-[0_0_15px_rgba(255,255,255,0.4)] transition-all transform hover:scale-105 active:scale-95"
             title="Richiedi un preventivo"
           >
             <MessageSquare size={14} />
@@ -96,17 +106,17 @@ const Header: React.FC = () => {
             {isOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
-      </div>
+      </motion.header>
 
-      {/* Mobile Nav */}
+      {/* Mobile Nav Dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: -20, scale: 0.95 }}
+            initial={{ opacity: 0, y: -20, scale: 0.95, x: "-50%" }}
+            animate={{ opacity: 1, y: 0, scale: 1, x: "-50%" }}
+            exit={{ opacity: 0, y: -20, scale: 0.95, x: "-50%" }}
             transition={{ duration: 0.2 }}
-            className="absolute top-full left-0 right-0 mt-4 mx-auto w-full bg-black/90 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden"
+            className="fixed top-24 left-1/2 w-[90%] max-w-md bg-black/80 backdrop-blur-xl border border-white/10 rounded-2xl shadow-2xl overflow-hidden z-40"
           >
             <nav className="flex flex-col p-4 space-y-2">
               {navLinks.map((link) => (
@@ -115,7 +125,7 @@ const Header: React.FC = () => {
                     key={link.name} 
                     href={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+                    className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 transition-all text-center"
                   >
                     {link.name}
                   </a>
@@ -124,7 +134,7 @@ const Header: React.FC = () => {
                     key={link.name} 
                     to={link.href}
                     onClick={() => setIsOpen(false)}
-                    className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 transition-all"
+                    className="block px-4 py-3 rounded-xl text-sm font-bold uppercase tracking-widest text-gray-300 hover:text-white hover:bg-white/10 transition-all text-center"
                   >
                     {link.name}
                   </Link>
@@ -134,7 +144,7 @@ const Header: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 };
 

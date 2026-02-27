@@ -8,7 +8,7 @@ function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-black text-white selection:bg-white/30 selection:text-white cursor-none">
+      <div className="min-h-screen bg-black text-white selection:bg-white/30 selection:text-white md:cursor-none">
         <CustomCursor />
         <Routes>
           <Route path="/" element={<Home />} />
