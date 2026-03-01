@@ -50,18 +50,19 @@ const Projects: React.FC = () => {
   ];
 
   return (
-    <section id="projects" className="py-24 bg-black text-white relative">
+    <section id="projects" className="py-16 bg-transparent text-white relative">
       <div className="container mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="mb-16 flex flex-col md:flex-row justify-between items-end gap-6"
+          className="mb-12 flex flex-col md:flex-row justify-between items-end gap-6"
         >
           <div>
-            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-wider uppercase mb-4 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">Alcuni dei nostri lavori</h2>
-            <p className="text-gray-400 max-w-lg font-light">
+            <h2 className="text-4xl md:text-5xl font-display font-bold tracking-wider uppercase mb-4 text-glow">Alcuni dei nostri lavori</h2>
+            <div className="h-0.5 w-24 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink mb-6 box-glow" />
+            <p className="text-gray-400 max-w-lg font-light text-lg">
               Idee, persone e brand che hanno intrecciato la loro visione alla nostra.
             </p>
           </div>
@@ -78,7 +79,7 @@ const Projects: React.FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className={`group relative aspect-video bg-zinc-900 overflow-hidden rounded-xl cursor-pointer border border-white/5 hover:border-white/20 hover:shadow-neon transition-all duration-500 ${project.color}`}
+              className={`group relative aspect-video glass-card overflow-hidden rounded-2xl cursor-pointer border border-white/5 hover:border-white/20 hover:shadow-neon transition-all duration-500 ${project.color}`}
             >
               {/* Background Image with Scrolling Effect */}
               <div className="absolute inset-0 overflow-hidden">
@@ -96,8 +97,8 @@ const Projects: React.FC = () => {
                 )}
               </div>
               
-              <div className={`absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500 z-10 flex flex-col justify-end p-6 md:p-8`}>
-                <h3 className="text-xl md:text-3xl font-display font-bold uppercase translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-100 drop-shadow-[0_0_5px_rgba(255,255,255,0.5)]">{project.title}</h3>
+              <div className={`absolute inset-0 bg-gradient-to-t from-black/95 via-black/60 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500 z-10 flex flex-col justify-end p-6 md:p-8 backdrop-blur-[2px]`}>
+                <h3 className="text-xl md:text-3xl font-display font-bold uppercase translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-100 text-glow">{project.title}</h3>
                 <p className="text-xs md:text-sm text-gray-300 uppercase tracking-widest translate-y-0 md:translate-y-4 md:group-hover:translate-y-0 transition-transform duration-500 delay-200">{project.category}</p>
               </div>
               

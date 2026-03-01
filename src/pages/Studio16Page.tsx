@@ -73,7 +73,7 @@ const Studio16Page: React.FC = () => {
     {
       title: 'Orario',
       duration: '1 Ora',
-      priceDry: '20 €',
+      priceDry: '25 €',
       priceTech: '50 €',
       icon: <Clock className="w-6 h-6" />
     },
@@ -94,7 +94,7 @@ const Studio16Page: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white selection:bg-white/30 selection:text-white cursor-none">
+    <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white cursor-none">
       
       {/* Scroll Progress Bar */}
       <motion.div
@@ -105,9 +105,9 @@ const Studio16Page: React.FC = () => {
       <Header />
       
       <main className="pt-24">
-        <section className="py-12 md:py-24 bg-black text-white relative overflow-hidden">
+        <section className="py-12 md:py-24 bg-transparent text-white relative overflow-hidden">
           {/* Background Elements */}
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900/20 via-black to-black opacity-40 z-0" />
+          {/* <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gray-900/20 via-black to-black opacity-40 z-0" /> */}
           
           <div className="container mx-auto px-6 relative z-10">
             {/* Hero Section */}
@@ -138,7 +138,7 @@ const Studio16Page: React.FC = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: i * 0.1 }}
                   viewport={{ once: true }}
-                  className="p-6 rounded-2xl bg-white/5 border border-white/10 hover:border-neon-blue/30 transition-all hover:bg-white/10 group"
+                  className="glass p-6 rounded-2xl hover:border-neon-blue/30 transition-all hover:bg-white/10 group"
                 >
                   <div className="mb-4 p-3 bg-black/50 rounded-xl w-fit group-hover:scale-110 transition-transform duration-300 border border-white/5">
                     {feature.icon}
@@ -170,7 +170,7 @@ const Studio16Page: React.FC = () => {
                     whileInView={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.5, delay: i * 0.1 }}
                     viewport={{ once: true }}
-                    className="flex flex-col gap-4 p-6 rounded-2xl bg-zinc-900/50 border border-white/5 hover:border-neon-purple/30 transition-all hover:-translate-y-1"
+                    className="flex flex-col gap-4 p-6 rounded-2xl glass-card hover:border-neon-purple/30 transition-all hover:-translate-y-1"
                   >
                     <div className="flex items-center gap-4">
                       <div className="p-2 rounded-lg bg-white/5">
@@ -295,7 +295,9 @@ const Studio16Page: React.FC = () => {
                 Ambiente professionale, attrezzato e versatile per ogni tua esigenza creativa.
               </p>
               <a 
-                href="#contact" 
+                href="https://woolkye.com/tour/studio16-moruzzo" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-blue hover:text-white transition-all duration-300 shadow-[0_0_20px_rgba(255,255,255,0.3)] hover:shadow-[0_0_30px_rgba(0,243,255,0.6)] relative z-10"
               >
                 Prenota ora

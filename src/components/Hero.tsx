@@ -15,7 +15,7 @@ const Hero: React.FC = () => {
     <section 
       ref={ref}
       id="home" 
-      className="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-black"
+      className="relative h-screen flex flex-col justify-center items-center text-center px-6 overflow-hidden bg-transparent"
     >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
@@ -24,53 +24,52 @@ const Hero: React.FC = () => {
           loop
           muted
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover opacity-60 pointer-events-none"
+          className="absolute top-0 left-0 w-full h-full object-cover opacity-60 pointer-events-none mix-blend-screen"
         >
-          <source src={`${import.meta.env.BASE_URL}assets/video-showreel-trimmed.mp4`} type="video/mp4" />
+          <source src="/assets/video-showreel-trimmed.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
 
       {/* Simple Dynamic Background Overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-transparent via-black/40 to-black z-0" />
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-10 z-0 mix-blend-overlay" />
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-black/40 to-transparent z-0" />
       
       {/* Minimal Geometric Shapes (Slow Float) */}
       <motion.div 
         animate={{ 
           rotate: 360,
-          scale: [1, 1.05, 1],
-        }}
-        transition={{ 
-          rotate: { duration: 30, repeat: Infinity, ease: "linear" },
-          scale: { duration: 8, repeat: Infinity, ease: "easeInOut" }
-        }}
-        className="absolute top-10 md:top-20 left-4 md:left-20 w-32 h-32 md:w-64 md:h-64 border border-neon-blue/10 rounded-full blur-[1px] z-0 pointer-events-none"
-      />
-      
-      <motion.div 
-        animate={{ 
-          rotate: -360,
           scale: [1, 1.1, 1],
         }}
         transition={{ 
           rotate: { duration: 40, repeat: Infinity, ease: "linear" },
           scale: { duration: 10, repeat: Infinity, ease: "easeInOut" }
         }}
-        className="absolute bottom-10 md:bottom-20 right-4 md:right-20 w-40 h-40 md:w-80 md:h-80 border border-neon-purple/10 rounded-full blur-[1px] z-0 pointer-events-none dashed-border"
+        className="absolute top-10 md:top-20 left-4 md:left-20 w-32 h-32 md:w-64 md:h-64 border border-neon-blue/10 rounded-full blur-2xl z-0 pointer-events-none"
+      />
+      
+      <motion.div 
+        animate={{ 
+          rotate: -360,
+          scale: [1, 1.05, 1],
+        }}
+        transition={{ 
+          rotate: { duration: 50, repeat: Infinity, ease: "linear" },
+          scale: { duration: 12, repeat: Infinity, ease: "easeInOut" }
+        }}
+        className="absolute bottom-10 md:bottom-20 right-4 md:right-20 w-40 h-40 md:w-80 md:h-80 border border-neon-purple/10 rounded-full blur-2xl z-0 pointer-events-none"
       />
       
       {/* Floating Elements (Simple 2D Float) */}
       <motion.div
-        animate={{ y: [0, -15, 0] }}
+        animate={{ y: [0, -15, 0], opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-1/4 right-1/4 w-12 h-12 border border-neon-pink/20 rotate-45 z-0 pointer-events-none"
+        className="absolute top-1/4 right-1/4 w-12 h-12 border border-neon-pink/20 rotate-45 z-0 pointer-events-none blur-md"
       />
       
       <motion.div
-        animate={{ y: [0, 20, 0] }}
+        animate={{ y: [0, 20, 0], opacity: [0.3, 0.6, 0.3] }}
         transition={{ duration: 7, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-1/3 left-1/3 w-16 h-16 border border-neon-blue/10 rounded-xl z-0 pointer-events-none"
+        className="absolute bottom-1/3 left-1/3 w-16 h-16 border border-neon-blue/20 rounded-xl z-0 pointer-events-none blur-md"
       />
 
       <motion.div 
@@ -86,12 +85,12 @@ const Hero: React.FC = () => {
           className="relative group cursor-default flex flex-col items-center"
         >
           {/* Subtle Glow */}
-          <div className="absolute -inset-20 bg-gradient-to-tr from-neon-blue/10 via-neon-purple/10 to-neon-pink/10 blur-[100px] rounded-full opacity-40 animate-pulse-slow" />
+          <div className="absolute -inset-20 bg-gradient-to-tr from-neon-blue/20 via-neon-purple/20 to-neon-pink/20 blur-[120px] rounded-full opacity-60 animate-pulse-slow" />
           
           <img 
             src={`${import.meta.env.BASE_URL}assets/logo-text.png`}
             alt="Gaia Circle Lab Text" 
-            className="w-56 md:w-96 lg:w-[32rem] h-auto opacity-100 drop-shadow-[0_0_20px_rgba(255,255,255,0.15)] mb-6 md:mb-10"
+            className="w-56 md:w-96 lg:w-[32rem] h-auto opacity-100 drop-shadow-[0_0_30px_rgba(255,255,255,0.2)] mb-6 md:mb-10 relative z-10"
           />
 
           {/* Clean Subtitle */}
@@ -99,17 +98,23 @@ const Hero: React.FC = () => {
              initial={{ opacity: 0, y: 10 }}
              animate={{ opacity: 1, y: 0 }}
              transition={{ duration: 0.8, delay: 0.5 }}
-             className="flex flex-wrap justify-center gap-3 md:gap-8 text-[10px] md:text-sm font-display tracking-[0.2em] uppercase text-gray-400"
+             className="text-center space-y-6 relative z-10"
           >
-            <span className="hover:text-neon-blue transition-colors duration-300">Web Design</span>
-            <span className="text-white/20">•</span>
-            <span className="hover:text-neon-purple transition-colors duration-300">Musica</span>
-            <span className="text-white/20">•</span>
-            <span className="hover:text-neon-pink transition-colors duration-300">Video</span>
-            <span className="text-white/20">•</span>
-            <span className="hover:text-neon-blue transition-colors duration-300">Eventi</span>
-            <span className="text-white/20">•</span>
-            <span className="hover:text-white transition-colors duration-300">Studio 16</span>
+             <h2 className="text-xl md:text-2xl font-light tracking-[0.2em] text-white/90 uppercase">
+               Agenzia Creativa di <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-neon-purple font-medium text-glow-blue">Arte</span> & <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-purple to-neon-pink font-medium text-glow-purple">Tecnologia</span>
+             </h2>
+             
+             <div className="flex flex-wrap justify-center gap-3 md:gap-6 text-[10px] md:text-xs font-display tracking-[0.2em] uppercase text-gray-400/80">
+                <span className="hover:text-neon-blue transition-colors duration-300">Web Design</span>
+                <span className="text-white/10">•</span>
+                <span className="hover:text-neon-purple transition-colors duration-300">Musica</span>
+                <span className="text-white/10">•</span>
+                <span className="hover:text-neon-pink transition-colors duration-300">Video</span>
+                <span className="text-white/10">•</span>
+                <span className="hover:text-neon-blue transition-colors duration-300">Eventi</span>
+                <span className="text-white/10">•</span>
+                <span className="hover:text-white transition-colors duration-300">Studio 16</span>
+             </div>
           </motion.div>
         </motion.div>
 

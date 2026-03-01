@@ -1,14 +1,28 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect, useMemo } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Music, Mic2, Video, ArrowRight } from 'lucide-react';
 
 const Studio16Teaser: React.FC = () => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const images = useMemo(() => [
+    `${import.meta.env.BASE_URL}assets/studio16/studio-1.jpg`,
+    `${import.meta.env.BASE_URL}assets/studio16/studio-2.jpg`,
+    `${import.meta.env.BASE_URL}assets/studio16/studio-3.jpg`
+  ], []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 4000);
+    return () => clearInterval(timer);
+  }, [images]);
+
   return (
-    <section className="py-24 bg-zinc-900/30 border-y border-white/5 relative overflow-hidden">
+    <section className="py-16 bg-transparent relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay pointer-events-none" />
-      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-neon-purple/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none" />
+      <div className="absolute top-1/2 right-0 w-[500px] h-[500px] bg-neon-purple/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none mix-blend-screen" />
       
       <div className="container mx-auto px-6 relative z-10">
         <div className="flex flex-col md:flex-row items-center justify-between gap-12">
@@ -68,18 +82,28 @@ const Studio16Teaser: React.FC = () => {
             className="md:w-1/2 relative"
           >
             <div className="aspect-video rounded-2xl overflow-hidden border border-white/10 relative group bg-black/50 backdrop-blur-sm">
-              {/* Background with noise and gradient */}
-              <div className="absolute inset-0 bg-gradient-to-br from-zinc-900 to-black opacity-90" />
-              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-5 mix-blend-overlay" />
-              
-              {/* Center Icon/Text */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center z-10 p-8">
-                <img 
-                  src={`${import.meta.env.BASE_URL}assets/studio16.svg`}
-                  alt="Studio 16" 
-                  className="w-full max-w-[280px] md:max-w-[360px] h-auto drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] group-hover:scale-105 transition-transform duration-500"
+              {/* Slideshow */}
+              <AnimatePresence mode="popLayout">
+                <motion.img
+                  key={currentImage}
+                  src={images[currentImage]}
+                  alt="Studio 16 Environment"
+                  initial={{ opacity: 0, scale: 1.1 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 1 }}
+                  className="absolute inset-0 w-full h-full object-cover"
                 />
-              </div>
+              </AnimatePresence>
+              
+              {/* Overlay Gradient for better integration */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-80" />
+              
+              {/* Logo Overlay (Optional - keep it subtle in corner or center?) 
+                  Let's keep the logo but smaller in the corner or remove it?
+                  The user asked to replace the div content with images.
+                  Let's remove the big logo and just keep the images.
+              */}
             </div>
             
             {/* Decorative box behind */}

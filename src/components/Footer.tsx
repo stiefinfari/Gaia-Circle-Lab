@@ -2,9 +2,12 @@ import React from 'react';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black py-12 border-t border-white/10 text-center relative overflow-hidden">
-      {/* Background glow */}
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-neon-blue/5 blur-[100px] pointer-events-none" />
+    <footer className="bg-transparent py-16 text-center relative overflow-hidden">
+      {/* Subtle top separator - just a gradient line */}
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      
+      {/* Background glow matching the theme */}
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[500px] h-[200px] bg-neon-blue/20 blur-[100px] pointer-events-none mix-blend-screen" />
 
       <div className="container mx-auto px-6 flex flex-col items-center justify-center gap-6 relative z-10">
         
