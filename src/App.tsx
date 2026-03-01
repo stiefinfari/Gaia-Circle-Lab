@@ -12,6 +12,7 @@ const GraphicDesignPage = React.lazy(() => import('./pages/GraphicDesignPage'));
 const EventsPage = React.lazy(() => import('./pages/EventsPage'));
 const GaiaIaPage = React.lazy(() => import('./pages/GaiaIaPage'));
 const ContactPage = React.lazy(() => import('./pages/ContactPage'));
+const StrategyPage = React.lazy(() => import('./pages/StrategyPage'));
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path="/servizi/graphic-design" element={<GraphicDesignPage />} />
             <Route path="/servizi/eventi" element={<EventsPage />} />
             <Route path="/gaia-x-ia" element={<GaiaIaPage />} />
+            <Route path="/servizi/strategy" element={<StrategyPage />} />
             <Route path="/contatti" element={<ContactPage />} />
           </Routes>
         </Suspense>
