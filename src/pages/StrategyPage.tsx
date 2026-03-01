@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, PenTool, Users, Zap, Rocket, Globe, Hammer, ShoppingBag, ArrowRight, CheckCircle2 } from 'lucide-react';
+import { Search, PenTool, Users, Zap, Rocket, Globe, Hammer, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const StrategyPage: React.FC = () => {
