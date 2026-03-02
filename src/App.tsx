@@ -17,6 +17,7 @@ const ContactPage = React.lazy(() => import('./pages/ContactPage'));
 const StrategyPage = React.lazy(() => import('./pages/StrategyPage'));
 const PrivacyPolicy = React.lazy(() => import('./pages/PrivacyPolicy'));
 const CookiePolicy = React.lazy(() => import('./pages/CookiePolicy'));
+const NotFoundPage = React.lazy(() => import('./pages/NotFoundPage'));
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
               <Route path="/contatti" element={<ContactPage />} />
               <Route path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route path="/cookie-policy" element={<CookiePolicy />} />
+              <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>
         </div>
