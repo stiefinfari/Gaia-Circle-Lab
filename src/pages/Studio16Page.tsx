@@ -72,13 +72,6 @@ const Studio16Page: React.FC = () => {
 
   const pricing = [
     {
-      title: 'Orario',
-      duration: 'Slot min. 2h',
-      priceDry: '€ 45 / ora',
-      note: 'Accesso workstation GPU + Audio Monitoring.',
-      icon: <Clock className="w-6 h-6" />
-    },
-    {
       title: 'Mezza Giornata',
       duration: '4 ore',
       priceDry: '€ 160',
