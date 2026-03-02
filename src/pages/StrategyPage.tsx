@@ -55,74 +55,74 @@ const StrategyPage: React.FC = () => {
                 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {/* Step 1 */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group h-full">
                         <div className="w-12 h-12 bg-neon-blue/20 rounded-xl flex items-center justify-center mb-6 text-neon-blue group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">01</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                            <Search className="w-5 h-5 text-neon-blue" />
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
+                            <Search className="w-5 h-5 text-neon-blue flex-shrink-0" />
                             Audit & Analisi
                         </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Check-up tecnologico e screening dei bandi attivi (CCIAA, Regionali, Transizione 5.0).
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-blue" /> Mappatura Gap</li>
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-blue" /> Selezione Bandi</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-blue flex-shrink-0" /> Mappatura Gap</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-blue flex-shrink-0" /> Selezione Bandi</li>
                         </ul>
                     </div>
 
                     {/* Step 2 */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group h-full">
                         <div className="w-12 h-12 bg-neon-purple/20 rounded-xl flex items-center justify-center mb-6 text-neon-purple group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">02</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                            <PenTool className="w-5 h-5 text-neon-purple" />
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
+                            <PenTool className="w-5 h-5 text-neon-purple flex-shrink-0" />
                             Progettazione
                         </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Sviluppo del progetto tecnico su misura per massimizzare il punteggio in graduatoria.
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-purple" /> Focus VR/AR/AI</li>
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-purple" /> Digitalizzazione</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-purple flex-shrink-0" /> Focus VR/AR/AI</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-purple flex-shrink-0" /> Digitalizzazione</li>
                         </ul>
                     </div>
 
                     {/* Step 3 */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group h-full">
                         <div className="w-12 h-12 bg-neon-pink/20 rounded-xl flex items-center justify-center mb-6 text-neon-pink group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">03</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                            <FileText className="w-5 h-5 text-neon-pink" />
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
+                            <FileText className="w-5 h-5 text-neon-pink flex-shrink-0" />
                             Gestione
                         </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Gestione completa della pratica, dalla domanda alla rendicontazione finale.
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-pink" /> Burocrazia Zero</li>
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-pink" /> Conformità Totale</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-pink flex-shrink-0" /> Burocrazia Zero</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-pink flex-shrink-0" /> Conformità Totale</li>
                         </ul>
                     </div>
 
                     {/* Step 4 */}
-                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-colors group h-full">
                         <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-6 text-green-400 group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">04</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
-                            <Zap className="w-5 h-5 text-green-400" />
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
+                            <Zap className="w-5 h-5 text-green-400 flex-shrink-0" />
                             Risultati
                         </h3>
-                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Deployment delle soluzioni e formazione del team. Produttività immediata.
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-green-400" /> ROI Misurabile</li>
-                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-green-400" /> Training Team</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" /> ROI Misurabile</li>
+                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" /> Training Team</li>
                         </ul>
                     </div>
                 </div>
@@ -147,31 +147,33 @@ const StrategyPage: React.FC = () => {
 
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {/* Start-up */}
-                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-neon-blue/50 transition-all group relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-6 rounded-3xl border border-white/10 hover:border-neon-blue/50 transition-all group relative overflow-hidden h-full">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-neon-blue/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-neon-blue/20 transition-colors" />
-                        <Rocket className="w-10 h-10 text-neon-blue mb-6 relative z-10" />
-                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Start-up</h4>
-                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">Nuove imprese o &lt; 5 anni (Under 40).</p>
+                        <Rocket className="w-10 h-10 text-neon-blue mb-6 relative z-10 flex-shrink-0" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10 break-words hyphens-auto">Start-up</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10 break-words">Nuove imprese o &lt; 5 anni (Under 40).</p>
                         
                         <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
                             <div>
                                 <span className="block text-xs text-gray-500 uppercase mb-1">Contributo</span>
-                                <span className="text-2xl font-bold text-white">50%</span>
-                                <span className="text-xs text-neon-blue ml-2 font-bold">FONDO PERDUTO</span>
+                                <div className="flex flex-wrap items-baseline gap-2">
+                                    <span className="text-2xl font-bold text-white">50%</span>
+                                    <span className="text-xs text-neon-blue font-bold">FONDO PERDUTO</span>
+                                </div>
                             </div>
                             <div>
                                 <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
-                                <span className="text-sm text-gray-300">Tech & Innovation</span>
+                                <span className="text-sm text-gray-300 break-words">Tech & Innovation</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Internazionalizzazione */}
-                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-neon-purple/50 transition-all group relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-6 rounded-3xl border border-white/10 hover:border-neon-purple/50 transition-all group relative overflow-hidden h-full">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-neon-purple/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-neon-purple/20 transition-colors" />
-                        <Globe className="w-10 h-10 text-neon-purple mb-6 relative z-10" />
-                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Export</h4>
-                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">PMI Manifatturiere e Servizi.</p>
+                        <Globe className="w-10 h-10 text-neon-purple mb-6 relative z-10 flex-shrink-0" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10 break-words hyphens-auto">Export</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10 break-words">PMI Manifatturiere e Servizi.</p>
                         
                         <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
                             <div>
@@ -180,17 +182,17 @@ const StrategyPage: React.FC = () => {
                             </div>
                             <div>
                                 <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
-                                <span className="text-sm text-gray-300">Fiere & Digital Export</span>
+                                <span className="text-sm text-gray-300 break-words">Fiere & Digital Export</span>
                             </div>
                         </div>
                     </div>
 
                     {/* CATA */}
-                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-neon-pink/50 transition-all group relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-6 rounded-3xl border border-white/10 hover:border-neon-pink/50 transition-all group relative overflow-hidden h-full">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-neon-pink/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-neon-pink/20 transition-colors" />
-                        <Hammer className="w-10 h-10 text-neon-pink mb-6 relative z-10" />
-                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Artigianato</h4>
-                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">Digitalizzazione Imprese Artigiane.</p>
+                        <Hammer className="w-10 h-10 text-neon-pink mb-6 relative z-10 flex-shrink-0" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10 break-words hyphens-auto">Artigianato</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10 break-words">Digitalizzazione Imprese Artigiane.</p>
                         
                         <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
                             <div>
@@ -199,17 +201,17 @@ const StrategyPage: React.FC = () => {
                             </div>
                             <div>
                                 <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
-                                <span className="text-sm text-gray-300">Software & Gestionali</span>
+                                <span className="text-sm text-gray-300 break-words">Software & Gestionali</span>
                             </div>
                         </div>
                     </div>
 
                     {/* CATT */}
-                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-green-400/50 transition-all group relative overflow-hidden">
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-6 rounded-3xl border border-white/10 hover:border-green-400/50 transition-all group relative overflow-hidden h-full">
                         <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-green-500/20 transition-colors" />
-                        <ShoppingBag className="w-10 h-10 text-green-400 mb-6 relative z-10" />
-                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Terziario</h4>
-                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">Commercio, Turismo e Servizi.</p>
+                        <ShoppingBag className="w-10 h-10 text-green-400 mb-6 relative z-10 flex-shrink-0" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10 break-words hyphens-auto">Terziario</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10 break-words">Commercio, Turismo e Servizi.</p>
                         
                         <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
                             <div>
@@ -218,7 +220,7 @@ const StrategyPage: React.FC = () => {
                             </div>
                             <div>
                                 <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
-                                <span className="text-sm text-gray-300">E-commerce & Social</span>
+                                <span className="text-sm text-gray-300 break-words">E-commerce & Social</span>
                             </div>
                         </div>
                     </div>
