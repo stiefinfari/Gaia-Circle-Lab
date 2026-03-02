@@ -2,12 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Speaker, Zap, PartyPopper, Disc, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const EventsPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white cursor-none">
+      <SEO 
+        title="Eventi & Experience" 
+        description="Organizzazione eventi, service audio/video/luci e format proprietari. Creiamo esperienze immersive e memorabili."
+        keywords="Eventi, Service Audio Luci, Organizzazione Eventi, Udine, FVG, Limonando, Tech My House"
+        canonical="/servizi/eventi"
+      />
       <Header />
       <main className="pt-24 pb-20">
         <section className="container mx-auto px-6">

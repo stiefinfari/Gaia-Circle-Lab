@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, ArrowRight, CheckCircle, Navigation } from 'lucide-react';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -56,6 +57,11 @@ const ContactPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-neon-blue/30 selection:text-white cursor-none">
+      <SEO 
+        title="Contatti" 
+        description="Parliamo del tuo progetto. Contattaci per un preventivo o vieni a trovarci nel nostro studio a Moruzzo (UD)."
+        canonical="/contatti"
+      />
       <Header />
       
       {/* Background Elements - Subtler */}

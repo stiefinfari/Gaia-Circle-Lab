@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useLocation } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -48,6 +49,10 @@ const Home: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white cursor-none">
+      <SEO 
+        title="Home" 
+        description="Gaia Circle Lab è un'agenzia creativa di Arte e Tecnologia. Uniamo Web Design, Intelligenza Artificiale ed Eventi Immersivi per creare esperienze uniche."
+      />
       {/* Scroll Progress Bar */}
       <motion.div
         className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink origin-left z-[100]"

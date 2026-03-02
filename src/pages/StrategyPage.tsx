@@ -2,12 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, PenTool, Users, Zap, Rocket, Globe, Hammer, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const StrategyPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-black text-white selection:bg-neon-blue/30 selection:text-white">
+      <SEO 
+        title="Strategia & Bandi" 
+        description="Consulenza strategica per accedere ai bandi FVG. Digitalizzazione, Start-up, Internazionalizzazione. Supporto completo dalla domanda alla rendicontazione."
+        keywords="Bandi FVG, Contributi Fondo Perduto, Start-up, Internazionalizzazione, Digitalizzazione, CATA, CATT, Udine"
+        canonical="/servizi/strategy"
+      />
       <Header />
       {/* Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none">

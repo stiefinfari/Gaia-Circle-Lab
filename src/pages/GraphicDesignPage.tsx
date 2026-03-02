@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
 import { PenTool, Film, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -34,6 +35,12 @@ const GraphicDesignPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-black text-white selection:bg-neon-blue/30 selection:text-white cursor-none">
+      <SEO 
+        title="Graphic Design & Motion" 
+        description="Brand Identity, Motion Graphics, Materiale Editoriale. Creiamo linguaggi visivi unici per il tuo brand."
+        keywords="Graphic Design, Motion Graphics, Logo Design, Brand Identity, Udine, FVG, Animazione 3D"
+        canonical="/servizi/graphic-design"
+      />
       <Header />
       
       <main ref={containerRef} className="relative pt-24 pb-20">

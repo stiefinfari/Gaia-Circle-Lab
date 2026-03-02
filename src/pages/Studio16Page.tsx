@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { Mic, Monitor, Users, Camera, Briefcase, Wifi, Layout, Zap, Headphones, Clock, Calendar as CalendarIcon, Video } from 'lucide-react';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Contact from '../components/Contact';
@@ -95,6 +96,12 @@ const Studio16Page: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white">
+      <SEO 
+        title="Studio 16" 
+        description="Il tuo hub creativo a Moruzzo. Spazio ibrido plug-and-play per Podcast, Shooting Fotografici, Content Creation e Coworking. Prenota ora."
+        keywords="Studio 16, Moruzzo, Podcast Studio, Sala Posa, Coworking, Udine, Affitto Studio, Sala Registrazione"
+        canonical="/studio16"
+      />
       
       {/* Scroll Progress Bar */}
       <motion.div

@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Cookie, Info, Settings, ShieldCheck, ToggleRight } from 'lucide-react';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useCookieConsent } from '../context/CookieContext';
@@ -15,6 +16,11 @@ const CookiePolicy = () => {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-purple-500/30">
+      <SEO 
+        title="Cookie Policy" 
+        description="Informativa sui cookie di Gaia Circle Lab. Scopri quali cookie utilizziamo e come gestire le tue preferenze."
+        canonical="/cookie-policy"
+      />
       <Header />
       
       <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto">

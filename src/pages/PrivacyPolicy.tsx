@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Shield, Lock, FileText, Mail, Server, UserCheck } from 'lucide-react';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -12,6 +13,11 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-black text-white font-sans selection:bg-cyan-500/30">
+      <SEO 
+        title="Privacy Policy" 
+        description="Informativa sulla privacy di Gaia Circle Lab. Scopri come trattiamo i tuoi dati personali in conformità al GDPR."
+        canonical="/privacy-policy"
+      />
       <Header />
       
       <main className="pt-32 pb-20 px-6 max-w-4xl mx-auto">

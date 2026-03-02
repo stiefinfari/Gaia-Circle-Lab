@@ -2,12 +2,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Video, Music, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const AudioVideoPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white cursor-none">
+      <SEO 
+        title="Produzione Audio & Video" 
+        description="Sound Design, Composizione Musicale, Video Production e Post-produzione. Realizziamo contenuti audiovisivi professionali per brand ed eventi."
+        keywords="Produzione Audio, Video Making, Sound Design, Composizione, Udine, FVG, Spot Pubblicitari, Videoclip"
+        canonical="/servizi/audio-video"
+      />
       <Header />
       <main className="pt-24 pb-20">
         <section className="container mx-auto px-6">

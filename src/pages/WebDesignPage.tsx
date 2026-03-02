@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Monitor, Code, ArrowRight, Zap, Database, Globe, Rocket, ShoppingBag, Factory } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -97,6 +98,12 @@ const WebDesignPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white cursor-none">
+      <SEO 
+        title="Web Design & Development" 
+        description="Realizzazione siti web, e-commerce e web app. Soluzioni digitali veloci, sicure e ottimizzate per i motori di ricerca."
+        keywords="Web Design, Sviluppo Siti Web, E-commerce, SEO, Udine, FVG, Siti Veloci, React, Shopify"
+        canonical="/servizi/web-design"
+      />
       <Header />
       <main className="pt-24 pb-20">
         <section className="container mx-auto px-6">

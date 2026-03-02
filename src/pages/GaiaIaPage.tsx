@@ -1,12 +1,19 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Cpu, Sparkles, BrainCircuit, Zap, Music, Video, Palette, PartyPopper, Bot, Globe } from 'lucide-react';
+import SEO from '../components/SEO';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const GaiaIaPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-white selection:bg-neon-purple/30 selection:text-white cursor-none overflow-x-hidden">
+      <SEO 
+        title="Gaia x IA" 
+        description="L'Intelligenza Artificiale come amplificatore della creatività. Generative Art, Musica, Video e Codice. Il futuro è la simbiosi uomo-macchina."
+        keywords="Intelligenza Artificiale, AI, Generative Art, Udine, FVG, Innovazione, Creatività"
+        canonical="/gaia-x-ia"
+      />
       <Header />
       
       {/* Background Elements */}
