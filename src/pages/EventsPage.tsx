@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Speaker, Zap, PartyPopper, Disc, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -63,9 +64,9 @@ const EventsPage: React.FC = () => {
                    <p className="text-gray-400 leading-relaxed font-light mb-8 max-w-2xl">
                       La nostra expertise spazia dalla progettazione di stage design innovativi alla gestione di flussi complessi, garantendo un impatto visivo e sonoro senza compromessi.
                    </p>
-                   <a href="/contatti" className="inline-flex items-center gap-2 text-neon-pink font-bold uppercase tracking-widest hover:text-white transition-colors group border border-neon-pink/30 px-6 py-3 rounded-full hover:bg-neon-pink hover:border-neon-pink">
+                   <Link to="/contatti" className="inline-flex items-center gap-2 text-neon-pink font-bold uppercase tracking-widest hover:text-white transition-colors group border border-neon-pink/30 px-6 py-3 rounded-full hover:bg-neon-pink hover:border-neon-pink">
                       Organizza il tuo evento <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-                   </a>
+                   </Link>
                 </div>
              </div>
 
@@ -178,9 +179,9 @@ const EventsPage: React.FC = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <a href="/contatti" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-pink hover:text-white transition-all duration-300">
+            <Link to="/contatti" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-pink hover:text-white transition-all duration-300">
               Organizza il tuo evento <ArrowRight size={20} />
-            </a>
+            </Link>
           </div>
         </section>
       </main>

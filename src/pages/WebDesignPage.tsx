@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Monitor, Code, ArrowRight, Zap, Database, Globe, Rocket, ShoppingBag, Factory } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -33,8 +34,8 @@ const WebDesignPage: React.FC = () => {
     {
       title: "ESSENTIAL",
       target: "PMI, Liberi Professionisti, Agenzie",
-      stack: "Next.js, Vercel, Sanity CMS",
-      description: "Piattaforma headless performante. PWA installabile, UI clean/corporate. Soluzione solida senza AI.",
+      stack: "Sito Ultra-Veloce, Gestione Autonoma",
+      description: "Sito web veloce, sicuro e ottimizzato. Design pulito e professionale, facile da aggiornare.",
       icon: <Monitor className="w-8 h-8 text-neon-blue" />,
       color: "glass-neon-blue",
       glow: "shadow-neon-blue/20"
@@ -42,8 +43,8 @@ const WebDesignPage: React.FC = () => {
     {
       title: "VISIONARY",
       target: "Brand Tech, Design, Eventi B2B",
-      stack: "WebGL, TouchDesigner, Vercel AI SDK",
-      description: "Esperienza immersiva con particellari WebGL. Integrazione bot RAG su documenti aziendali.",
+      stack: "Grafica 3D, Intelligenza Artificiale",
+      description: "Esperienza digitale ad alto impatto. Animazioni 3D fluide e Intelligenza Artificiale integrata.",
       icon: <Zap className="w-8 h-8 text-neon-purple" />,
       color: "glass-neon-purple",
       glow: "shadow-neon-purple/20"
@@ -51,8 +52,8 @@ const WebDesignPage: React.FC = () => {
     {
       title: "ENTERPRISE",
       target: "E-commerce B2B/B2C, Web-App Gestionali",
-      stack: "Shopify Headless, Supabase",
-      description: "Architettura e-commerce avanzata. Gestione stato globale e autenticazione utenti complessa.",
+      stack: "Shopify Avanzato, Database Dedicato",
+      description: "Piattaforma e-commerce completa e scalabile. Gestione avanzata di ordini e clienti.",
       icon: <Database className="w-8 h-8 text-neon-pink" />,
       color: "glass-neon-pink",
       glow: "shadow-neon-pink/20"
@@ -61,34 +62,34 @@ const WebDesignPage: React.FC = () => {
 
   const bandiPackages = [
     {
-      title: "START",
-      bando: "Ignition Protocol",
+      title: "STARTUP",
+      bando: "Bando Start-up Giovanili",
       target: "Start-up Giovanili (Under 40)",
-      desc: "E-commerce headless + Bot customer care. Include immagine coordinata e video lancio.",
+      desc: "Tutto per lanciare la tua idea: e-commerce moderno, chatbot intelligente e video di presentazione.",
       icon: <Rocket className="w-6 h-6 text-yellow-400" />,
       color: "border-yellow-400/20 hover:border-yellow-400/50"
     },
     {
       title: "GLOBAL",
-      bando: "Nexus Borderless",
+      bando: "Bando Internazionalizzazione",
       target: "PMI Manifattura/Servizi",
-      desc: "Portale B2B multilingua, ERP sync. Video prodotto high-end e fiere virtuali 3D.",
+      desc: "Strumenti per l'export: sito multilingua, catalogo interattivo e presentazioni virtuali.",
       icon: <Globe className="w-6 h-6 text-green-400" />,
       color: "border-green-400/20 hover:border-green-400/50"
     },
     {
       title: "MAKER",
-      bando: "Machina Flow",
-      target: "Artigianato & Laboratori",
-      desc: "Web App B2B dipartimentale cloud. Video-tutorial UX/UI interni per onboarding.",
+      bando: "CATA Artigianato",
+      target: "Falegnamerie, Laboratori",
+      desc: "Digitalizza la produzione: app gestionale su misura e video tutorial per formare il team.",
       icon: <Factory className="w-6 h-6 text-orange-400" />,
       color: "border-orange-400/20 hover:border-orange-400/50"
     },
     {
-      title: "STORE",
-      bando: "Retail Override",
+      title: "RETAIL",
+      bando: "CATT FVG - Linea 4",
       target: "Terziario, Commercio, Turismo",
-      desc: "E-commerce headless B2C. Shooting prodotti e format video verticali social.",
+      desc: "Vendi ovunque: e-commerce indipendente, shooting prodotti e contenuti video per i social.",
       icon: <ShoppingBag className="w-6 h-6 text-cyan-400" />,
       color: "border-cyan-400/20 hover:border-cyan-400/50"
     }
@@ -139,7 +140,7 @@ const WebDesignPage: React.FC = () => {
                   
                   <div className="mt-auto pt-6 border-t border-white/5">
                     <p className="text-sm font-bold text-gray-500 uppercase mb-2 flex items-center gap-2">
-                      <Code size={14} /> Tech Stack
+                      <Code size={14} /> Tecnologia
                     </p>
                     <p className="text-sm text-neon-blue font-mono">{pkg.stack}</p>
                   </div>
@@ -214,9 +215,9 @@ const WebDesignPage: React.FC = () => {
 
           {/* CTA */}
           <div className="text-center">
-             <a href="/contatti" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-blue hover:text-white transition-all duration-300 shadow-lg hover:shadow-neon-blue/50">
+             <Link to="/contatti" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-blue hover:text-white transition-all duration-300 shadow-lg hover:shadow-neon-blue/50">
                Parla con noi <ArrowRight size={20} />
-             </a>
+             </Link>
           </div>
         </section>
       </main>

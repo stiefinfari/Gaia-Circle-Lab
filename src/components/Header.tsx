@@ -150,10 +150,10 @@ const Header: React.FC = () => {
             href="/contatti"
             onClick={(e) => handleNavClick(e, '/contatti')}
             className="flex items-center gap-2 bg-white text-black px-5 py-2 rounded-full text-xs font-sans uppercase tracking-widest font-bold hover:bg-neon-blue hover:text-black hover:shadow-[0_0_20px_rgba(0,243,255,0.4)] transition-all transform hover:scale-105 active:scale-95 cursor-pointer duration-300"
-            title="Richiedi un preventivo"
+            title="Contattaci"
           >
             <MessageSquare size={14} />
-            Preventivo
+            Contatti
           </a>
         </nav>
 

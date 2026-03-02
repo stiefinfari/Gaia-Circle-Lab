@@ -2,17 +2,20 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Search, PenTool, Users, Zap, Rocket, Globe, Hammer, ShoppingBag, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 const StrategyPage: React.FC = () => {
   return (
-    <div className="pt-24 min-h-screen bg-black text-white selection:bg-neon-blue/30 selection:text-white">
+    <div className="min-h-screen bg-black text-white selection:bg-neon-blue/30 selection:text-white">
+      <Header />
       {/* Background Elements */}
       <div className="fixed inset-0 z-0 pointer-events-none">
           <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-neon-blue/10 rounded-full blur-[120px] mix-blend-screen" />
           <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-neon-purple/10 rounded-full blur-[120px] mix-blend-screen" />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10 pb-24">
+      <div className="pt-24 container mx-auto px-6 relative z-10 pb-24">
         <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
                 <motion.h1 
@@ -217,6 +220,7 @@ const StrategyPage: React.FC = () => {
             </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

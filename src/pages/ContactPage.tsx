@@ -1,105 +1,244 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Mail, Instagram, Facebook, Phone, MapPin, MessageSquare, ArrowRight } from 'lucide-react';
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle, Navigation } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const ContactPage: React.FC = () => {
+  const [formState, setFormState] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    setFormState({
+      ...formState,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitting(false);
+      setIsSubmitted(true);
+      setFormState({ name: '', email: '', subject: '', message: '' });
+    }, 1500);
+  };
+
+  const mapLinks = [
+    {
+      name: 'Google Maps',
+      url: 'https://www.google.com/maps/search/?api=1&query=Via+Centa+15+Moruzzo+UD',
+      icon: <MapPin size={18} />,
+      color: 'hover:bg-green-500 hover:border-green-500'
+    },
+    {
+      name: 'Apple Maps',
+      url: 'http://maps.apple.com/?q=Via+Centa+15,Moruzzo',
+      icon: <Navigation size={18} />,
+      color: 'hover:bg-gray-500 hover:border-gray-500'
+    },
+    {
+      name: 'Waze',
+      url: 'https://waze.com/ul?q=Via+Centa+15+Moruzzo',
+      icon: <Navigation size={18} className="fill-current" />,
+      color: 'hover:bg-blue-400 hover:border-blue-400'
+    }
+  ];
+
   return (
-    <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white cursor-none">
+    <div className="min-h-screen bg-black text-white selection:bg-neon-blue/30 selection:text-white cursor-none">
       <Header />
-      <main className="pt-24 pb-20">
-        <section className="container mx-auto px-6">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h1 className="text-4xl md:text-7xl font-display font-bold tracking-wider uppercase mb-6 text-white">
-              Contatti
-            </h1>
-            <p className="text-xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed">
-              Hai un progetto in mente? Parliamone.
-              <br />Siamo pronti a trasformare la tua visione in realtà.
-            </p>
-          </motion.div>
+      
+      {/* Background Elements - Subtler */}
+      <div className="fixed inset-0 z-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-neon-blue/5 rounded-full blur-[150px]" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-neon-purple/5 rounded-full blur-[150px]" />
+      </div>
 
-          <div className="grid md:grid-cols-2 gap-12 mb-24 max-w-5xl mx-auto">
-             {/* Contact Info */}
-             <div className="space-y-8">
-                <div className="glass p-8 rounded-3xl border border-white/10 hover:border-neon-blue/30 transition-all group">
-                   <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-white/5 p-3 rounded-xl group-hover:bg-neon-blue/20 transition-colors">
-                         <Mail className="w-6 h-6 text-white group-hover:text-neon-blue transition-colors" />
-                      </div>
-                      <h3 className="text-xl font-bold uppercase tracking-wide">Email</h3>
-                   </div>
-                   <a href="mailto:info@gaiacirclelab.com" className="text-lg text-gray-300 hover:text-white transition-colors block">
-                      info@gaiacirclelab.com
-                   </a>
-                </div>
-
-                <div className="glass p-8 rounded-3xl border border-white/10 hover:border-neon-purple/30 transition-all group">
-                   <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-white/5 p-3 rounded-xl group-hover:bg-neon-purple/20 transition-colors">
-                         <Phone className="w-6 h-6 text-white group-hover:text-neon-purple transition-colors" />
-                      </div>
-                      <h3 className="text-xl font-bold uppercase tracking-wide">Telefono</h3>
-                   </div>
-                   <a href="tel:+393409490109" className="text-lg text-gray-300 hover:text-white transition-colors block mb-2">
-                      +39 340 949 0109
-                   </a>
-                   <a href="https://wa.me/393409490109" target="_blank" rel="noopener noreferrer" className="text-sm text-neon-purple hover:text-white transition-colors inline-flex items-center gap-1">
-                      Scrivici su WhatsApp <ArrowRight size={14} />
-                   </a>
-                </div>
-
-                <div className="glass p-8 rounded-3xl border border-white/10 hover:border-neon-pink/30 transition-all group">
-                   <div className="flex items-center gap-4 mb-4">
-                      <div className="bg-white/5 p-3 rounded-xl group-hover:bg-neon-pink/20 transition-colors">
-                         <MapPin className="w-6 h-6 text-white group-hover:text-neon-pink transition-colors" />
-                      </div>
-                      <h3 className="text-xl font-bold uppercase tracking-wide">Sede</h3>
-                   </div>
-                   <p className="text-lg text-gray-300 mb-2">
-                      Via Centa 16, 33030 Moruzzo (UD)
-                   </p>
-                   <p className="text-sm text-gray-500">
-                      Riceviamo su appuntamento
+      <main className="pt-32 pb-20 relative z-10">
+        <section className="container mx-auto px-6 max-w-7xl">
+          
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-16">
+             {/* Left Column: Info & Maps */}
+             <motion.div 
+               initial={{ opacity: 0, x: -20 }}
+               animate={{ opacity: 1, x: 0 }}
+               transition={{ duration: 0.8 }}
+               className="lg:col-span-5 space-y-12"
+             >
+                <div>
+                   <h1 className="text-4xl md:text-6xl font-display font-bold uppercase mb-6 tracking-wider">
+                      Contatti
+                   </h1>
+                   <p className="text-gray-400 text-lg font-light leading-relaxed">
+                      Siamo sempre alla ricerca di nuove sfide. Raccontaci la tua idea o vieni a trovarci in studio.
                    </p>
                 </div>
-             </div>
 
-             {/* Social & Map */}
-             <div className="space-y-8 flex flex-col">
-                <div className="glass p-8 rounded-3xl border border-white/10 flex-grow flex flex-col justify-center text-center">
-                   <h3 className="text-2xl font-bold uppercase tracking-wide mb-8">Seguici</h3>
-                   <div className="flex justify-center gap-8">
-                      <a href="https://www.instagram.com/gaiacirclelab/" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-2">
-                         <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-gradient-to-tr group-hover:from-yellow-400 group-hover:via-red-500 group-hover:to-purple-600 transition-all duration-300">
-                            <Instagram className="w-8 h-8 text-white" />
+                <div className="space-y-8">
+                   {/* Address Card */}
+                   <div className="group">
+                      <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 flex items-center gap-2">
+                         <MapPin size={14} className="text-neon-pink" /> Sede Operativa
+                      </h3>
+                      <div className="pl-6 border-l border-white/10 group-hover:border-neon-pink/50 transition-colors duration-300">
+                         <p className="text-xl text-white font-light">Via Centa 15</p>
+                         <p className="text-xl text-white font-light mb-4">33030 Moruzzo (UD)</p>
+                         
+                         <div className="flex flex-wrap gap-3">
+                            {mapLinks.map((link) => (
+                               <a 
+                                 key={link.name}
+                                 href={link.url}
+                                 target="_blank"
+                                 rel="noopener noreferrer"
+                                 className={`flex items-center gap-2 px-4 py-2 rounded-full border border-white/10 bg-white/5 text-sm font-medium transition-all duration-300 hover:text-white ${link.color}`}
+                               >
+                                  {link.icon} {link.name}
+                               </a>
+                            ))}
                          </div>
-                         <span className="text-sm text-gray-400 group-hover:text-white transition-colors">Instagram</span>
-                      </a>
-                      <a href="https://www.facebook.com/gaiacirclelab" target="_blank" rel="noopener noreferrer" className="group flex flex-col items-center gap-2">
-                         <div className="w-16 h-16 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-[#1877F2] transition-all duration-300">
-                            <Facebook className="w-8 h-8 text-white" />
-                         </div>
-                         <span className="text-sm text-gray-400 group-hover:text-white transition-colors">Facebook</span>
-                      </a>
+                      </div>
+                   </div>
+
+                   {/* Email Card */}
+                   <div className="group">
+                      <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 flex items-center gap-2">
+                         <Mail size={14} className="text-neon-blue" /> Email
+                      </h3>
+                      <div className="pl-6 border-l border-white/10 group-hover:border-neon-blue/50 transition-colors duration-300">
+                         <a href="mailto:info@gaiacirclelab.com" className="text-xl text-white font-light hover:text-neon-blue transition-colors">
+                            info@gaiacirclelab.com
+                         </a>
+                      </div>
+                   </div>
+
+                   {/* Phone Card */}
+                   <div className="group">
+                      <h3 className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-4 flex items-center gap-2">
+                         <Phone size={14} className="text-neon-purple" /> Telefono
+                      </h3>
+                      <div className="pl-6 border-l border-white/10 group-hover:border-neon-purple/50 transition-colors duration-300">
+                         <a href="tel:+393409490109" className="text-xl text-white font-light hover:text-neon-purple transition-colors block mb-2">
+                            +39 340 949 0109
+                         </a>
+                         <a href="https://wa.me/393409490109" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-400 hover:text-white transition-colors inline-flex items-center gap-1">
+                            WhatsApp Disponibile <ArrowRight size={12} />
+                         </a>
+                      </div>
                    </div>
                 </div>
-                
-                <div className="glass p-8 rounded-3xl border border-white/10 bg-gradient-to-br from-neon-blue/10 to-transparent text-center">
-                   <MessageSquare className="w-12 h-12 text-neon-blue mx-auto mb-4" />
-                   <h3 className="text-xl font-bold mb-2">Preventivo Rapido?</h3>
-                   <p className="text-gray-400 text-sm mb-6">Raccontaci brevemente di cosa hai bisogno.</p>
-                   <a href="mailto:info@gaiacirclelab.com?subject=Richiesta Preventivo" className="inline-block w-full bg-white text-black py-3 rounded-full font-bold uppercase tracking-wide hover:bg-neon-blue hover:text-white transition-all">
-                      Invia Richiesta
-                   </a>
+             </motion.div>
+
+             {/* Right Column: Form */}
+             <motion.div 
+               initial={{ opacity: 0, y: 20 }}
+               animate={{ opacity: 1, y: 0 }}
+               transition={{ duration: 0.8, delay: 0.2 }}
+               className="lg:col-span-7"
+             >
+                <div className="bg-zinc-900/50 backdrop-blur-xl border border-white/5 rounded-3xl p-8 md:p-12">
+                   {isSubmitted ? (
+                      <div className="flex flex-col items-center justify-center h-[400px] text-center">
+                         <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mb-6 text-green-500">
+                            <CheckCircle size={32} />
+                         </div>
+                         <h3 className="text-2xl font-bold uppercase mb-4">Messaggio Inviato</h3>
+                         <p className="text-gray-400 mb-8 max-w-sm">
+                            Grazie per averci scritto. Il nostro team ti risponderà entro 24 ore.
+                         </p>
+                         <button 
+                            onClick={() => setIsSubmitted(false)}
+                            className="text-sm text-white border-b border-white/30 hover:border-white transition-all pb-1 uppercase tracking-widest"
+                         >
+                            Nuovo Messaggio
+                         </button>
+                      </div>
+                   ) : (
+                      <form onSubmit={handleSubmit} className="space-y-8">
+                         <div className="grid md:grid-cols-2 gap-8">
+                            <div className="space-y-2">
+                               <label htmlFor="name" className="text-xs font-bold uppercase tracking-widest text-gray-500">Nome</label>
+                               <input 
+                                 type="text" 
+                                 id="name" 
+                                 name="name" 
+                                 required
+                                 value={formState.name}
+                                 onChange={handleChange}
+                                 className="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-neon-blue transition-colors placeholder:text-gray-700"
+                                 placeholder="Il tuo nome"
+                               />
+                            </div>
+                            <div className="space-y-2">
+                               <label htmlFor="email" className="text-xs font-bold uppercase tracking-widest text-gray-500">Email</label>
+                               <input 
+                                 type="email" 
+                                 id="email" 
+                                 name="email" 
+                                 required
+                                 value={formState.email}
+                                 onChange={handleChange}
+                                 className="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-neon-blue transition-colors placeholder:text-gray-700"
+                                 placeholder="tua@email.com"
+                               />
+                            </div>
+                         </div>
+
+                         <div className="space-y-2">
+                            <label htmlFor="subject" className="text-xs font-bold uppercase tracking-widest text-gray-500">Oggetto</label>
+                            <select 
+                               id="subject" 
+                               name="subject" 
+                               required
+                               value={formState.subject}
+                               onChange={handleChange}
+                               className="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-neon-blue transition-colors appearance-none cursor-pointer"
+                            >
+                               <option value="" disabled className="bg-black">Seleziona un motivo</option>
+                               <option value="preventivo" className="bg-black">Richiesta Preventivo</option>
+                               <option value="collaborazione" className="bg-black">Collaborazione</option>
+                               <option value="info" className="bg-black">Informazioni Generali</option>
+                               <option value="privacy" className="bg-black">Privacy / GDPR</option>
+                            </select>
+                         </div>
+
+                         <div className="space-y-2">
+                            <label htmlFor="message" className="text-xs font-bold uppercase tracking-widest text-gray-500">Messaggio</label>
+                            <textarea 
+                               id="message" 
+                               name="message" 
+                               required
+                               value={formState.message}
+                               onChange={handleChange}
+                               rows={4}
+                               className="w-full bg-transparent border-b border-white/10 py-3 text-white focus:outline-none focus:border-neon-blue transition-colors placeholder:text-gray-700 resize-none"
+                               placeholder="Scrivi qui il tuo messaggio..."
+                            ></textarea>
+                         </div>
+
+                         <div className="pt-4">
+                            <button 
+                               type="submit" 
+                               disabled={isSubmitting}
+                               className="bg-white text-black font-bold uppercase tracking-widest px-8 py-4 rounded-full hover:bg-neon-blue hover:text-white transition-all duration-300 flex items-center gap-3 disabled:opacity-50"
+                            >
+                               {isSubmitting ? 'Invio...' : 'Invia Messaggio'} <ArrowRight size={18} />
+                            </button>
+                         </div>
+                      </form>
+                   )}
                 </div>
-             </div>
+             </motion.div>
           </div>
 
         </section>

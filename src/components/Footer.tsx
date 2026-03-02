@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -15,6 +16,13 @@ const Footer: React.FC = () => {
         <div className="text-gray-400 text-sm tracking-wide">
           <p className="font-bold text-white mb-2">GAIA CIRCLE LAB</p>
           <p>è di proprietà di GAIA di Elisa Chittaro <span className="text-neon-blue mx-2">|</span> P.IVA 03135250300</p>
+        </div>
+
+        {/* Links */}
+        <div className="flex gap-6 text-xs text-gray-400">
+          <Link to="/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+          <span className="text-white/20">|</span>
+          <Link to="/cookie-policy" className="hover:text-white transition-colors">Cookie Policy</Link>
         </div>
 
         {/* Copyright */}

@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Video, Music, ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -104,9 +105,9 @@ const AudioVideoPage: React.FC = () => {
 
           {/* CTA */}
           <div className="text-center">
-            <a href="/contatti" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-purple hover:text-white transition-all duration-300">
+            <Link to="/contatti" className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold uppercase tracking-wide hover:bg-neon-purple hover:text-white transition-all duration-300">
               Richiedi Preventivo <ArrowRight size={20} />
-            </a>
+            </Link>
           </div>
         </section>
       </main>
