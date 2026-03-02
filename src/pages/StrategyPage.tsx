@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Search, PenTool, Users, Zap, Rocket, Globe, Hammer, ShoppingBag, ArrowRight } from 'lucide-react';
+import { Search, PenTool, FileText, Zap, Rocket, Globe, Hammer, ShoppingBag, ArrowRight, CheckCircle, Crosshair } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SEO from '../components/SEO';
 import Header from '../components/Header';
@@ -16,215 +16,231 @@ const StrategyPage: React.FC = () => {
         canonical="/servizi/strategy"
       />
       <Header />
-      {/* Background Elements */}
+      
+      {/* Background Ambience - Simplified */}
       <div className="fixed inset-0 z-0 pointer-events-none">
-          <div className="absolute top-0 right-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-neon-blue/10 rounded-full blur-[80px] md:blur-[120px] mix-blend-screen opacity-60 md:opacity-100" />
-          <div className="absolute bottom-0 left-0 w-[300px] md:w-[500px] h-[300px] md:h-[500px] bg-neon-purple/10 rounded-full blur-[80px] md:blur-[120px] mix-blend-screen opacity-60 md:opacity-100" />
+          <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-neon-blue/10 rounded-full blur-[150px] opacity-30" />
+          <div className="absolute bottom-[-20%] left-[-10%] w-[800px] h-[800px] bg-neon-purple/10 rounded-full blur-[150px] opacity-30" />
       </div>
 
-      <div className="pt-24 md:pt-32 container mx-auto px-4 md:px-6 relative z-10 pb-16 md:pb-24">
-        <div className="max-w-5xl mx-auto">
-            <div className="text-center mb-10 md:mb-16">
+      <div className="pt-32 md:pt-40 container mx-auto px-6 relative z-10 pb-24">
+        <div className="max-w-7xl mx-auto">
+            
+            {/* Hero Section - Clean & Direct */}
+            <div className="text-center mb-24">
                 <motion.h1 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8 }}
-                  className="text-3xl md:text-6xl font-display font-bold uppercase mb-4 md:mb-6 text-glow leading-tight"
+                  className="text-4xl md:text-7xl font-display font-bold uppercase mb-6 tracking-tight leading-none"
                 >
-                    Strategia & <br className="md:hidden" />Implementazione
+                    Strategia & <span className="text-neon-blue">Bandi FVG</span>
                 </motion.h1>
                 <motion.p 
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="text-lg md:text-xl text-gray-400 font-light max-w-2xl mx-auto px-2"
+                  transition={{ duration: 0.8, delay: 0.1 }}
+                  className="text-xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed"
                 >
-                    Un approccio integrato per trasformare la tua visione in realtà misurabile.
+                    Trasformiamo la burocrazia in opportunità. Accedi ai fondi perduti per la tua crescita digitale.
                 </motion.p>
             </div>
 
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid md:grid-cols-2 gap-4 md:gap-8 mb-10 md:mb-16"
-            >
-                {/* Step 1 */}
-                <div className="flex flex-col md:flex-row gap-4 p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-blue/30 transition-colors group">
-                    <div className="bg-neon-blue/10 p-3 md:p-4 rounded-xl h-fit w-fit md:w-auto shrink-0 group-hover:bg-neon-blue/20 transition-colors">
-                        <Search className="text-neon-blue w-6 h-6" />
-                    </div>
-                    <div>
-                        <h4 className="text-lg md:text-xl font-bold uppercase mb-2 md:mb-3 text-neon-blue">1. Audit Tecnologico-Finanziario</h4>
-                        <p className="text-gray-300 font-mono text-sm leading-relaxed opacity-80">
-                            Analizziamo il tuo attuale ecosistema digitale e identifichiamo le aree di miglioramento (AI Integration, Immersive Media, efficientamento workflow). Parallelamente, mappiamo i bandi attivi (CCIAA, Regionali, Transizione 5.0) compatibili con il tuo profilo aziendale.
-                        </p>
-                    </div>
+            {/* The Process - Simple 4-Step Grid */}
+            <div className="mb-32">
+                <div className="text-center mb-16">
+                    <h2 className="text-2xl font-bold uppercase tracking-widest text-white mb-2">Il Nostro Metodo</h2>
+                    <div className="w-20 h-1 bg-neon-blue mx-auto rounded-full" />
                 </div>
-
-                {/* Step 2 */}
-                <div className="flex flex-col md:flex-row gap-4 p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-purple/30 transition-colors group">
-                    <div className="bg-neon-purple/10 p-3 md:p-4 rounded-xl h-fit w-fit md:w-auto shrink-0 group-hover:bg-neon-purple/20 transition-colors">
-                        <PenTool className="text-neon-purple w-6 h-6" />
-                    </div>
-                    <div>
-                        <h4 className="text-lg md:text-xl font-bold uppercase mb-2 md:mb-3 text-neon-purple">2. Progettazione Tailor-Made</h4>
-                        <p className="text-gray-300 font-mono text-sm leading-relaxed opacity-80">
-                            Non vendiamo pacchetti chiusi. Sviluppiamo un progetto tecnico che rispetti i parametri necessari per l'ottenimento del contributo.
-                            <span className="block mt-4 text-xs text-white/60 bg-white/5 p-3 rounded border-l-2 border-neon-purple">
-                                Focus: Digitalizzazione processi, hardware per VR/AR, installazioni interattive o infrastrutture AI-driven.
-                            </span>
-                        </p>
-                    </div>
-                </div>
-
-                {/* Step 3 */}
-                <div className="flex flex-col md:flex-row gap-4 p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-pink/30 transition-colors group">
-                    <div className="bg-neon-pink/10 p-3 md:p-4 rounded-xl h-fit w-fit md:w-auto shrink-0 group-hover:bg-neon-pink/20 transition-colors">
-                        <Users className="text-neon-pink w-6 h-6" />
-                    </div>
-                    <div>
-                        <h4 className="text-lg md:text-xl font-bold uppercase mb-2 md:mb-3 text-neon-pink">3. Gestione Pratica e Partnership</h4>
-                        <p className="text-gray-300 font-mono text-sm leading-relaxed opacity-80">
-                            Collaboriamo con consulenti finanziari specializzati per la presentazione della domanda. Ci occupiamo della fornitura tecnica e della documentazione necessaria per la rendicontazione, garantendo la conformità agli standard richiesti dall'ente erogatore.
-                        </p>
-                    </div>
-                </div>
-
-                {/* Step 4 */}
-                <div className="flex flex-col md:flex-row gap-4 p-5 md:p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-green-400/30 transition-colors group">
-                    <div className="bg-green-500/10 p-3 md:p-4 rounded-xl h-fit w-fit md:w-auto shrink-0 group-hover:bg-green-500/20 transition-colors">
-                        <Zap className="text-green-400 w-6 h-6" />
-                    </div>
-                    <div>
-                        <h4 className="text-lg md:text-xl font-bold uppercase mb-2 md:mb-3 text-green-400">4. Implementazione e Training</h4>
-                        <p className="text-gray-300 font-mono text-sm leading-relaxed opacity-80">
-                            A bando approvato o avviato, procediamo con il deployment tecnologico. Forniamo formazione interna al tuo team per garantire che l'investimento diventi immediatamente produttivo e integrato nel business model.
-                        </p>
-                    </div>
-                </div>
-            </motion.div>
-            
-            <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.6 }}
-                className="text-center text-xs text-gray-500 font-mono mb-10 md:mb-16 italic max-w-2xl mx-auto bg-white/5 p-4 rounded-lg border border-white/10 mx-4 md:mx-auto"
-            >
-                * Nota: I contributi sono erogati a rimborso. Il cliente anticipa l'investimento e riceve il contributo direttamente dall'ente erogatore.
-            </motion.p>
-
-            {/* Bandi Attivi Section */}
-            <motion.div 
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8 }}
-                viewport={{ once: true }}
-                className="bg-white/5 rounded-2xl md:rounded-3xl p-6 md:p-12 mb-10 md:mb-16 border border-white/10 relative overflow-hidden"
-            >
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-bl from-neon-blue/10 to-transparent pointer-events-none" />
                 
-                <h4 className="text-xl md:text-2xl font-bold uppercase mb-8 md:mb-10 text-center tracking-wider text-white">Opportunità Attive FVG</h4>
-                <div className="grid md:grid-cols-2 gap-6 md:gap-8">
-                    {/* Bando 1 */}
-                    <div className="p-5 md:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-neon-blue/50 transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-blue/10">
-                        <div className="flex items-center gap-4 mb-3 md:mb-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-neon-blue/10 flex items-center justify-center shrink-0 border border-neon-blue/20 group-hover:bg-neon-blue/20 transition-colors">
-                                <Rocket className="w-5 h-5 md:w-6 md:h-6 text-neon-blue" />
-                            </div>
-                            <h5 className="font-bold text-white uppercase text-base md:text-lg tracking-wide">Start-up Giovanili</h5>
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {/* Step 1 */}
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                        <div className="w-12 h-12 bg-neon-blue/20 rounded-xl flex items-center justify-center mb-6 text-neon-blue group-hover:scale-110 transition-transform">
+                            <span className="font-bold text-lg">01</span>
                         </div>
-                        <p className="text-sm text-gray-400 mb-4 font-light">Per nuove imprese o costituite da meno di 5 anni (Under 40).</p>
-                        <ul className="space-y-2 md:space-y-3 text-sm text-gray-300 font-mono">
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-neon-blue font-bold">50%</span>
-                                <span>A fondo perduto</span>
-                            </li>
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-neon-blue font-bold">Focus</span>
-                                <span>E-commerce, Branding, Tech</span>
-                            </li>
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <Search className="w-5 h-5 text-neon-blue" />
+                            Audit & Analisi
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                            Check-up tecnologico e screening dei bandi attivi (CCIAA, Regionali, Transizione 5.0).
+                        </p>
+                        <ul className="space-y-2 text-sm text-gray-500">
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-blue" /> Mappatura Gap</li>
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-blue" /> Selezione Bandi</li>
                         </ul>
                     </div>
 
-                    {/* Bando 2 */}
-                    <div className="p-5 md:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-neon-purple/50 transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-purple/10">
-                        <div className="flex items-center gap-4 mb-3 md:mb-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-neon-purple/10 flex items-center justify-center shrink-0 border border-neon-purple/20 group-hover:bg-neon-purple/20 transition-colors">
-                                <Globe className="w-5 h-5 md:w-6 md:h-6 text-neon-purple" />
-                            </div>
-                            <h5 className="font-bold text-white uppercase text-base md:text-lg tracking-wide">Internazionalizzazione</h5>
+                    {/* Step 2 */}
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                        <div className="w-12 h-12 bg-neon-purple/20 rounded-xl flex items-center justify-center mb-6 text-neon-purple group-hover:scale-110 transition-transform">
+                            <span className="font-bold text-lg">02</span>
                         </div>
-                        <p className="text-sm text-gray-400 mb-4 font-light">Per PMI Manifatturiere e Servizi che puntano all'estero.</p>
-                        <ul className="space-y-2 md:space-y-3 text-sm text-gray-300 font-mono">
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-neon-purple font-bold">50%</span>
-                                <span>Fino a 100k erogabili</span>
-                            </li>
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-neon-purple font-bold">Focus</span>
-                                <span>Portali B2B, Fiere Virtuali</span>
-                            </li>
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <PenTool className="w-5 h-5 text-neon-purple" />
+                            Progettazione
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                            Sviluppo del progetto tecnico su misura per massimizzare il punteggio in graduatoria.
+                        </p>
+                        <ul className="space-y-2 text-sm text-gray-500">
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-purple" /> Focus VR/AR/AI</li>
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-purple" /> Digitalizzazione</li>
                         </ul>
                     </div>
 
-                    {/* Bando 3 */}
-                    <div className="p-5 md:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-neon-pink/50 transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg hover:shadow-neon-pink/10">
-                        <div className="flex items-center gap-4 mb-3 md:mb-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-neon-pink/10 flex items-center justify-center shrink-0 border border-neon-pink/20 group-hover:bg-neon-pink/20 transition-colors">
-                                <Hammer className="w-5 h-5 md:w-6 md:h-6 text-neon-pink" />
-                            </div>
-                            <h5 className="font-bold text-white uppercase text-base md:text-lg tracking-wide">Artigianato (CATA)</h5>
+                    {/* Step 3 */}
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                        <div className="w-12 h-12 bg-neon-pink/20 rounded-xl flex items-center justify-center mb-6 text-neon-pink group-hover:scale-110 transition-transform">
+                            <span className="font-bold text-lg">03</span>
                         </div>
-                        <p className="text-sm text-gray-400 mb-4 font-light">Digitalizzazione per Imprese Artigiane.</p>
-                        <ul className="space-y-2 md:space-y-3 text-sm text-gray-300 font-mono">
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-neon-pink font-bold">30-45%</span>
-                                <span>Contributo a fondo perduto</span>
-                            </li>
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-neon-pink font-bold">Focus</span>
-                                <span>Web App, Gestionali, Automazione</span>
-                            </li>
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <FileText className="w-5 h-5 text-neon-pink" />
+                            Gestione
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                            Gestione completa della pratica, dalla domanda alla rendicontazione finale.
+                        </p>
+                        <ul className="space-y-2 text-sm text-gray-500">
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-pink" /> Burocrazia Zero</li>
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-neon-pink" /> Conformità Totale</li>
                         </ul>
                     </div>
 
-                    {/* Bando 4 */}
-                    <div className="p-5 md:p-6 rounded-2xl bg-black/40 border border-white/10 hover:border-green-400/50 transition-all duration-300 group hover:-translate-y-1 hover:shadow-lg hover:shadow-green-400/10">
-                        <div className="flex items-center gap-4 mb-3 md:mb-4">
-                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-green-500/10 flex items-center justify-center shrink-0 border border-green-500/20 group-hover:bg-green-500/20 transition-colors">
-                                <ShoppingBag className="w-5 h-5 md:w-6 md:h-6 text-green-400" />
-                            </div>
-                            <h5 className="font-bold text-white uppercase text-base md:text-lg tracking-wide">Terziario (CATT)</h5>
+                    {/* Step 4 */}
+                    <div className="bg-white/5 border border-white/10 rounded-2xl p-8 hover:bg-white/10 transition-colors group">
+                        <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-6 text-green-400 group-hover:scale-110 transition-transform">
+                            <span className="font-bold text-lg">04</span>
                         </div>
-                        <p className="text-sm text-gray-400 mb-4 font-light">Per Commercio, Turismo e Servizi.</p>
-                        <ul className="space-y-2 md:space-y-3 text-sm text-gray-300 font-mono">
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-green-400 font-bold">45%</span>
-                                <span>A fondo perduto</span>
-                            </li>
-                            <li className="flex items-center gap-3 bg-white/5 p-2 rounded">
-                                <span className="text-green-400 font-bold">Focus</span>
-                                <span>E-commerce, Social, Strategy</span>
-                            </li>
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <Zap className="w-5 h-5 text-green-400" />
+                            Risultati
+                        </h3>
+                        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+                            Deployment delle soluzioni e formazione del team. Produttività immediata.
+                        </p>
+                        <ul className="space-y-2 text-sm text-gray-500">
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-green-400" /> ROI Misurabile</li>
+                            <li className="flex items-center gap-2"><CheckCircle className="w-3 h-3 text-green-400" /> Training Team</li>
                         </ul>
                     </div>
                 </div>
-            </motion.div>
-
-            {/* CTA */}
-            <div className="text-center">
-                 <Link 
-                    to="/contatti" 
-                    className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 md:px-10 md:py-5 rounded-full font-bold uppercase tracking-wide hover:bg-gray-200 transition-all transform hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] text-base md:text-lg"
-                 >
-                    <span>Prenota un check-up gratuito</span>
-                    <ArrowRight size={20} className="md:w-6 md:h-6" />
-                 </Link>
-                 <p className="mt-4 md:mt-6 text-gray-500 text-sm">
-                    Analisi di fattibilità senza impegno.
-                 </p>
             </div>
+
+            {/* Note Section */}
+            <div className="flex justify-center mb-24">
+                <div className="bg-white/[0.03] border border-white/10 rounded-xl p-4 max-w-2xl text-center">
+                    <p className="text-gray-400 text-sm">
+                        <span className="text-neon-blue font-bold mr-2">* NOTA:</span>
+                        I contributi sono erogati a rimborso a progetto concluso.
+                    </p>
+                </div>
+            </div>
+
+            {/* Active Grants - Clean Cards */}
+            <div className="mb-24">
+                <div className="text-center mb-16">
+                    <h2 className="text-2xl font-bold uppercase tracking-widest text-white mb-2">Bandi Attivi</h2>
+                    <div className="w-20 h-1 bg-neon-purple mx-auto rounded-full" />
+                </div>
+
+                <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    {/* Start-up */}
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-neon-blue/50 transition-all group relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-neon-blue/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-neon-blue/20 transition-colors" />
+                        <Rocket className="w-10 h-10 text-neon-blue mb-6 relative z-10" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Start-up</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">Nuove imprese o &lt; 5 anni (Under 40).</p>
+                        
+                        <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Contributo</span>
+                                <span className="text-2xl font-bold text-white">50%</span>
+                                <span className="text-xs text-neon-blue ml-2 font-bold">FONDO PERDUTO</span>
+                            </div>
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
+                                <span className="text-sm text-gray-300">Tech & Innovation</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Internazionalizzazione */}
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-neon-purple/50 transition-all group relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-neon-purple/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-neon-purple/20 transition-colors" />
+                        <Globe className="w-10 h-10 text-neon-purple mb-6 relative z-10" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Export</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">PMI Manifatturiere e Servizi.</p>
+                        
+                        <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Massimale</span>
+                                <span className="text-2xl font-bold text-white">100k €</span>
+                            </div>
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
+                                <span className="text-sm text-gray-300">Fiere & Digital Export</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* CATA */}
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-neon-pink/50 transition-all group relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-neon-pink/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-neon-pink/20 transition-colors" />
+                        <Hammer className="w-10 h-10 text-neon-pink mb-6 relative z-10" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Artigianato</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">Digitalizzazione Imprese Artigiane.</p>
+                        
+                        <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Contributo</span>
+                                <span className="text-2xl font-bold text-white">30-45%</span>
+                            </div>
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
+                                <span className="text-sm text-gray-300">Software & Gestionali</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* CATT */}
+                    <div className="bg-gradient-to-br from-white/[0.05] to-transparent p-8 rounded-3xl border border-white/10 hover:border-green-400/50 transition-all group relative overflow-hidden">
+                        <div className="absolute top-0 right-0 w-32 h-32 bg-green-500/10 blur-[50px] rounded-full -mr-10 -mt-10 group-hover:bg-green-500/20 transition-colors" />
+                        <ShoppingBag className="w-10 h-10 text-green-400 mb-6 relative z-10" />
+                        <h4 className="text-xl font-bold text-white uppercase mb-2 relative z-10">Terziario</h4>
+                        <p className="text-sm text-gray-400 mb-6 min-h-[40px] relative z-10">Commercio, Turismo e Servizi.</p>
+                        
+                        <div className="space-y-4 relative z-10 pt-4 border-t border-white/10">
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Contributo</span>
+                                <span className="text-2xl font-bold text-white">45%</span>
+                            </div>
+                            <div>
+                                <span className="block text-xs text-gray-500 uppercase mb-1">Focus</span>
+                                <span className="text-sm text-gray-300">E-commerce & Social</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {/* CTA Section - Simplified */}
+            <div className="text-center">
+                <div className="inline-block p-[1px] rounded-full bg-gradient-to-r from-neon-blue via-neon-purple to-neon-pink">
+                    <Link 
+                        to="/contatti" 
+                        className="flex items-center gap-3 bg-black text-white px-10 py-5 rounded-full font-bold uppercase tracking-widest hover:bg-white/10 transition-all"
+                    >
+                        <span>Prenota Check-up Gratuito</span>
+                        <ArrowRight size={20} />
+                    </Link>
+                </div>
+                <p className="mt-6 text-gray-500 text-sm">
+                    Analisi di fattibilità senza impegno.
+                </p>
+            </div>
+
         </div>
       </div>
       <Footer />
