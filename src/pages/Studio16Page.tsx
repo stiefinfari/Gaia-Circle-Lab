@@ -94,7 +94,7 @@ const Studio16Page: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white cursor-none">
+    <div className="min-h-screen bg-transparent text-white selection:bg-white/30 selection:text-white">
       
       {/* Scroll Progress Bar */}
       <motion.div

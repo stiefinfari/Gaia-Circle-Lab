@@ -43,7 +43,7 @@ const StrategyPage: React.FC = () => {
               className="grid md:grid-cols-2 gap-6 md:gap-8 mb-16"
             >
                 {/* Step 1 */}
-                <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-blue/30 transition-colors group">
+                <div className="flex flex-col md:flex-row gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-blue/30 transition-colors group">
                     <div className="bg-neon-blue/10 p-4 rounded-xl h-fit shrink-0 group-hover:bg-neon-blue/20 transition-colors">
                         <Search className="text-neon-blue w-6 h-6" />
                     </div>
@@ -56,7 +56,7 @@ const StrategyPage: React.FC = () => {
                 </div>
 
                 {/* Step 2 */}
-                <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-purple/30 transition-colors group">
+                <div className="flex flex-col md:flex-row gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-purple/30 transition-colors group">
                     <div className="bg-neon-purple/10 p-4 rounded-xl h-fit shrink-0 group-hover:bg-neon-purple/20 transition-colors">
                         <PenTool className="text-neon-purple w-6 h-6" />
                     </div>
@@ -72,7 +72,7 @@ const StrategyPage: React.FC = () => {
                 </div>
 
                 {/* Step 3 */}
-                <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-pink/30 transition-colors group">
+                <div className="flex flex-col md:flex-row gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-neon-pink/30 transition-colors group">
                     <div className="bg-neon-pink/10 p-4 rounded-xl h-fit shrink-0 group-hover:bg-neon-pink/20 transition-colors">
                         <Users className="text-neon-pink w-6 h-6" />
                     </div>
@@ -85,7 +85,7 @@ const StrategyPage: React.FC = () => {
                 </div>
 
                 {/* Step 4 */}
-                <div className="flex gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-green-400/30 transition-colors group">
+                <div className="flex flex-col md:flex-row gap-4 p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-green-400/30 transition-colors group">
                     <div className="bg-green-500/10 p-4 rounded-xl h-fit shrink-0 group-hover:bg-green-500/20 transition-colors">
                         <Zap className="text-green-400 w-6 h-6" />
                     </div>
