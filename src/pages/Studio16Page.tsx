@@ -72,25 +72,22 @@ const Studio16Page: React.FC = () => {
 
   const pricing = [
     {
+      title: 'Orario',
+      duration: '1 Ora',
+      priceDry: '€ 45',
+      icon: <Clock className="w-6 h-6" />
+    },
+    {
       title: 'Mezza Giornata',
       duration: '4 ore',
       priceDry: '€ 160',
-      note: 'Ideale per sessioni di Sound Design o AI Upscaling.',
       icon: <CalendarIcon className="w-6 h-6" />
     },
     {
       title: 'Giornata Intera',
       duration: '8 ore',
       priceDry: '€ 280',
-      note: 'Uso esclusivo Studio 16.',
       icon: <Briefcase className="w-6 h-6" />
-    },
-    {
-      title: 'Pacchetto Resident',
-      duration: 'Mensile',
-      priceDry: '€ 950',
-      note: '10 ingressi/mese (o 80h). Desk dedicato + Storage.',
-      icon: <Users className="w-6 h-6" />
     }
   ];
 
@@ -244,7 +241,6 @@ const Studio16Page: React.FC = () => {
                       <th className="py-4 px-6">Tipologia</th>
                       <th className="py-4 px-6">Durata</th>
                       <th className="py-4 px-6 text-neon-blue">Prezzo Consigliato</th>
-                      <th className="py-4 px-6 text-gray-400">Note Operative</th>
                     </tr>
                   </thead>
                   <tbody className="text-white">
@@ -256,7 +252,6 @@ const Studio16Page: React.FC = () => {
                         </td>
                         <td className="py-6 px-6 text-gray-300 whitespace-nowrap">{item.duration}</td>
                         <td className="py-6 px-6 text-xl font-bold text-neon-blue whitespace-nowrap">{item.priceDry}</td>
-                        <td className="py-6 px-6 text-sm text-gray-400 max-w-xs">{item.note}</td>
                       </tr>
                     ))}
                   </tbody>
