@@ -1,5 +1,6 @@
 import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import React, { Suspense } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Home from './pages/Home';
 import CustomCursor from './components/CustomCursor';
 import ScrollToTop from './components/ScrollToTop';
@@ -45,6 +46,7 @@ function App() {
               <Route path="/cookie-policy" element={<CookiePolicy />} />
             </Routes>
           </Suspense>
+          <Analytics />
         </div>
       </CookieProvider>
     </Router>
