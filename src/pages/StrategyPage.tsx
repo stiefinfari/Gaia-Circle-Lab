@@ -59,16 +59,16 @@ const StrategyPage: React.FC = () => {
                         <div className="w-12 h-12 bg-neon-blue/20 rounded-xl flex items-center justify-center mb-6 text-neon-blue group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">01</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
-                            <Search className="w-5 h-5 text-neon-blue flex-shrink-0" />
-                            Audit & Analisi
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-start gap-2 break-words hyphens-auto">
+                            <Search className="w-5 h-5 text-neon-blue flex-shrink-0 mt-1" />
+                            <span className="flex-1 min-w-0">Audit & Analisi</span>
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Check-up tecnologico e screening dei bandi attivi (CCIAA, Regionali, Transizione 5.0).
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-blue flex-shrink-0" /> Mappatura Gap</li>
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-blue flex-shrink-0" /> Selezione Bandi</li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-blue flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">Mappatura Gap</span></li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-blue flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">Selezione Bandi</span></li>
                         </ul>
                     </div>
 
@@ -77,16 +77,16 @@ const StrategyPage: React.FC = () => {
                         <div className="w-12 h-12 bg-neon-purple/20 rounded-xl flex items-center justify-center mb-6 text-neon-purple group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">02</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
-                            <PenTool className="w-5 h-5 text-neon-purple flex-shrink-0" />
-                            Progettazione
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-start gap-2 break-words hyphens-auto">
+                            <PenTool className="w-5 h-5 text-neon-purple flex-shrink-0 mt-1" />
+                            <span className="flex-1 min-w-0">Progettazione</span>
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Sviluppo del progetto tecnico su misura per massimizzare il punteggio in graduatoria.
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-purple flex-shrink-0" /> Focus VR/AR/AI</li>
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-purple flex-shrink-0" /> Digitalizzazione</li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-purple flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">Focus VR/AR/AI</span></li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-purple flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">Digitalizzazione</span></li>
                         </ul>
                     </div>
 
@@ -95,16 +95,16 @@ const StrategyPage: React.FC = () => {
                         <div className="w-12 h-12 bg-neon-pink/20 rounded-xl flex items-center justify-center mb-6 text-neon-pink group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">03</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
-                            <FileText className="w-5 h-5 text-neon-pink flex-shrink-0" />
-                            Gestione
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-start gap-2 break-words hyphens-auto">
+                            <FileText className="w-5 h-5 text-neon-pink flex-shrink-0 mt-1" />
+                            <span className="flex-1 min-w-0">Gestione</span>
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Gestione completa della pratica, dalla domanda alla rendicontazione finale.
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-pink flex-shrink-0" /> Burocrazia Zero</li>
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-pink flex-shrink-0" /> Conformità Totale</li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-pink flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">Burocrazia Zero</span></li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-neon-pink flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">Conformità Totale</span></li>
                         </ul>
                     </div>
 
@@ -113,16 +113,16 @@ const StrategyPage: React.FC = () => {
                         <div className="w-12 h-12 bg-green-500/20 rounded-xl flex items-center justify-center mb-6 text-green-400 group-hover:scale-110 transition-transform">
                             <span className="font-bold text-lg">04</span>
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3 flex items-center gap-2 break-words hyphens-auto">
-                            <Zap className="w-5 h-5 text-green-400 flex-shrink-0" />
-                            Risultati
+                        <h3 className="text-xl font-bold text-white mb-3 flex items-start gap-2 break-words hyphens-auto">
+                            <Zap className="w-5 h-5 text-green-400 flex-shrink-0 mt-1" />
+                            <span className="flex-1 min-w-0">Risultati</span>
                         </h3>
                         <p className="text-gray-400 text-sm leading-relaxed mb-4 break-words">
                             Deployment delle soluzioni e formazione del team. Produttività immediata.
                         </p>
                         <ul className="space-y-2 text-sm text-gray-500">
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" /> ROI Misurabile</li>
-                            <li className="flex items-center gap-2 break-words"><CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0" /> Training Team</li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">ROI Misurabile</span></li>
+                            <li className="flex items-start gap-2 break-words"><CheckCircle className="w-3 h-3 text-green-400 flex-shrink-0 mt-1" /> <span className="flex-1 min-w-0">Training Team</span></li>
                         </ul>
                     </div>
                 </div>
