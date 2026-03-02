@@ -73,24 +73,31 @@ const Studio16Page: React.FC = () => {
   const pricing = [
     {
       title: 'Orario',
-      duration: '1 Ora',
-      priceDry: '25 €',
-      priceTech: '50 €',
+      duration: 'Slot min. 2h',
+      priceDry: '€ 45 / ora',
+      note: 'Accesso workstation GPU + Audio Monitoring.',
       icon: <Clock className="w-6 h-6" />
     },
     {
       title: 'Mezza Giornata',
-      duration: '4 Ore',
-      priceDry: '65 €',
-      priceTech: '160 €',
+      duration: '4 ore',
+      priceDry: '€ 160',
+      note: 'Ideale per sessioni di Sound Design o AI Upscaling.',
       icon: <CalendarIcon className="w-6 h-6" />
     },
     {
       title: 'Giornata Intera',
-      duration: '8 Ore',
-      priceDry: '110 €',
-      priceTech: '280 €',
+      duration: '8 ore',
+      priceDry: '€ 280',
+      note: 'Uso esclusivo Studio 16.',
       icon: <Briefcase className="w-6 h-6" />
+    },
+    {
+      title: 'Pacchetto Resident',
+      duration: 'Mensile',
+      priceDry: '€ 950',
+      note: '10 ingressi/mese (o 80h). Desk dedicato + Storage.',
+      icon: <Users className="w-6 h-6" />
     }
   ];
 
@@ -241,22 +248,22 @@ const Studio16Page: React.FC = () => {
                 <table className="w-full text-left border-collapse">
                   <thead>
                     <tr className="border-b border-white/10 text-gray-400 text-sm uppercase tracking-wider">
-                      <th className="py-4 px-6">Modalità</th>
+                      <th className="py-4 px-6">Tipologia</th>
                       <th className="py-4 px-6">Durata</th>
-                      <th className="py-4 px-6 text-neon-blue">Dry Hire (Solo Spazio)</th>
-                      <th className="py-4 px-6 text-neon-purple">Con Supporto A/V (+ Regia)</th>
+                      <th className="py-4 px-6 text-neon-blue">Prezzo Consigliato</th>
+                      <th className="py-4 px-6 text-gray-400">Note Operative</th>
                     </tr>
                   </thead>
                   <tbody className="text-white">
                     {pricing.map((item, i) => (
                       <tr key={i} className="border-b border-white/5 hover:bg-white/5 transition-colors">
                         <td className="py-6 px-6 font-bold flex items-center gap-3">
-                          {item.icon}
+                          <div className="text-neon-purple">{item.icon}</div>
                           {item.title}
                         </td>
-                        <td className="py-6 px-6 text-gray-300">{item.duration}</td>
-                        <td className="py-6 px-6 text-xl font-bold text-neon-blue">{item.priceDry}</td>
-                        <td className="py-6 px-6 text-xl font-bold text-neon-purple">{item.priceTech}</td>
+                        <td className="py-6 px-6 text-gray-300 whitespace-nowrap">{item.duration}</td>
+                        <td className="py-6 px-6 text-xl font-bold text-neon-blue whitespace-nowrap">{item.priceDry}</td>
+                        <td className="py-6 px-6 text-sm text-gray-400 max-w-xs">{item.note}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -267,8 +274,8 @@ const Studio16Page: React.FC = () => {
               <div className="grid md:grid-cols-3 gap-6 mt-12">
                 <div className="p-6 rounded-xl bg-gradient-to-br from-neon-blue/10 to-transparent border border-neon-blue/20">
                   <h4 className="text-lg font-bold text-white mb-2">Pacchetto "Resident"</h4>
-                  <p className="text-2xl font-bold text-neon-blue mb-2">150 € <span className="text-sm font-normal text-gray-400">/ mese</span></p>
-                  <p className="text-sm text-gray-300">10 ore flessibili mensili. Ideale per podcaster o lavoratori ibridi. Solo spazio.</p>
+                  <p className="text-2xl font-bold text-neon-blue mb-2">950 € <span className="text-sm font-normal text-gray-400">/ mese</span></p>
+                  <p className="text-sm text-gray-300">10 ingressi/mese (o 80h). Desk dedicato + Storage.</p>
                 </div>
                 <div className="p-6 rounded-xl bg-gradient-to-br from-neon-purple/10 to-transparent border border-neon-purple/20">
                   <h4 className="text-lg font-bold text-white mb-2">Post-Produzione</h4>
